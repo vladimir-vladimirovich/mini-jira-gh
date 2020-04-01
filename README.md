@@ -3,5 +3,5 @@
 ### `npm start`
 
 ## Github page update guide
-### npm run deploy
-### npm push origin master
+### `npm run deploy`
+### `npm push origin master`
