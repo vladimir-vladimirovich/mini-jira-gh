@@ -1,5 +1,4 @@
-## Github pages link
-# `https://vladimir-vladimirovich.github.io/mini-jira-gh/`
+[Github pages link](https://vladimir-vladimirovich.github.io/mini-jira-gh/)
 
 ## Installation guide
 ### `npm install`
