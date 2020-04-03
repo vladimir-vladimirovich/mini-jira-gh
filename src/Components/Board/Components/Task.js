@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/Task.css';
 
 const Task = (props) => {
-    const onDragStart = (event, id) => {
-        event.dataTransfer.setData('taskId', id);
+    const onDragStart = (event, taskId) => {
+        event.dataTransfer.setData('taskId', taskId);
     }
 
     return (
@@ -31,6 +32,14 @@ const Task = (props) => {
             </ul>
         </div>
     )
+}
+
+Task.propTypes = {
+    id: PropTypes.string,
+    summary: PropTypes.string,
+    assignee: PropTypes.string,
+    project: PropTypes.string,
+    img: PropTypes.string
 }
 
 export default Task;

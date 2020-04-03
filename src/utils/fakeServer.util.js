@@ -5,7 +5,7 @@ class FakeServerUtil {
     constructor() {
         this.tasksData = tasksData;
         this.taskbarConfig = taskbarConfig;
-    };
+    }
 
     // In order to emulate request/response
     async getTasksData() {
@@ -14,7 +14,7 @@ class FakeServerUtil {
                 resolve(this.tasksData);
             }, 2500);
         })
-    };
+    }
 
     // In order to emulate request/response
     async getTaskbarConfig() {
@@ -23,7 +23,7 @@ class FakeServerUtil {
                 resolve(this.taskbarConfig);
             }, 1500);
         })
-    };
+    }
 }
 
 export const fakeServerUtil = new FakeServerUtil();

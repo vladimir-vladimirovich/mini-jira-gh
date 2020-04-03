@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TasksContext } from '../Contexts/TasksContext';
 import Task from './Task';
 import '../css/Taskbar.css';
@@ -55,6 +56,10 @@ class Taskbar extends React.Component {
             </TasksContext.Consumer>
         );
     }
+}
+
+Taskbar.propTypes = {
+    status: PropTypes.string
 }
 
 export default Taskbar;
