@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../css/Task.css';
+import '../../css/Task.css';
 
 const Task = (props) => {
-    const onDragStart = (event, taskId) => {
-        event.dataTransfer.setData('taskId', taskId);
-    }
-
     return (
         <div
             className="task"
             draggable="true"
-            onDragStart={(event) => onDragStart(event, props.id)}
+            onDragStart={props.onDragStart}
         >
             <ul className="list">
                 <li>{props.id}</li>
@@ -35,11 +31,12 @@ const Task = (props) => {
 }
 
 Task.propTypes = {
-    id: PropTypes.string,
-    summary: PropTypes.string,
-    assignee: PropTypes.string,
-    project: PropTypes.string,
-    img: PropTypes.string
+    id: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    assignee: PropTypes.string.isRequired,
+    project: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    onDragStart: PropTypes.func.isRequired
 }
 
 export default Task;

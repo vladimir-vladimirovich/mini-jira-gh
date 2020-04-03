@@ -1,6 +1,5 @@
 import React from 'react';
 import Board from './Board';
-import PropTypes from 'prop-types';
 import { TasksContext } from './Contexts/TasksContext';
 import { fakeServerUtil } from '../../utils/fakeServer.util';
 
@@ -12,8 +11,8 @@ export default class BoardContainer extends React.Component {
             // [start] Reserved names by TasksContext
             tasks: [],
             updateTasks: this.updateTasks,
-            setTasks: this.setTasks
             // [end] Reserved names by TasksContext
+            setTasks: this.setTasks
         }
     }
 
@@ -45,11 +44,4 @@ export default class BoardContainer extends React.Component {
             </TasksContext.Provider>
         )
     }
-}
-
-BoardContainer.propTypes = {
-    taskbar: PropTypes.array,
-    tasks: PropTypes.array,
-    updateTasks: PropTypes.func,
-    setTasks: PropTypes.func
 }

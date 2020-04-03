@@ -1,6 +1,6 @@
 import React from 'react';
 import { TasksContext } from './Contexts/TasksContext';
-import Taskbar from './Components/Taskbar';
+import TaskbarContainer from './Components/Taskbar/index';
 import './css/Board.css';
 
 const Board = () => {
@@ -11,7 +11,7 @@ const Board = () => {
                     <div className="board-taskbar-container">
                         {context.taskbar.map((item) => {
                             return (
-                                <Taskbar
+                                <TaskbarContainer
                                     key={item.columnStatus}
                                     status={item.columnStatus}
                                 />
