@@ -8,13 +8,15 @@ class TaskContainer extends React.Component {
     }
 
     render() {
+        let { id, summary, assignee, project, img } = this.props;
+
         return (
             <Task
-                id={this.props.id}
-                summary={this.props.summary}
-                assignee={this.props.assignee}
-                project={this.props.project}
-                img={this.props.img}
+                id={id}
+                summary={summary}
+                assignee={assignee}
+                project={project}
+                img={img}
                 onDragStart={this.onDragStart}
             />
         )

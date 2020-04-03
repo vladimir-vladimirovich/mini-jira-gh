@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './Board';
-import { TasksContext } from './Contexts/TasksContext';
+import { TasksContext } from './contexts/TasksContext';
 import { fakeServerUtil } from '../../utils/fakeServer.util';
 
 export default class BoardContainer extends React.Component {

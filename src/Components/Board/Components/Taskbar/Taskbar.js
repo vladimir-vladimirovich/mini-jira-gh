@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TasksContext } from '../../Contexts/TasksContext';
+import { TasksContext } from '../../contexts/TasksContext';
 import TaskContainer from '../Task/index';
 import '../../css/Taskbar.css';
 
 const Taskbar = (props) => {
+    let { status, onDragOver, onDrop } = props;
+
     return (
         <TasksContext.Consumer>
             {(context) => (
                 <div className="taskbar">
                     <div className="taskbar-title">
-                        <p>{props.status}</p>
+                        <p>{status}</p>
                     </div>
                     <div
                         className="taskbar-list"
-                        onDragOver={props.onDragOver}
-                        onDrop={props.onDrop}
+                        onDragOver={onDragOver}
+                        onDrop={onDrop}
                     >
                         {context.tasks.map((task) => {
-                            if (task.status === props.status) {
+                            if (task.status === status) {
                                 return (
                                     <TaskContainer
                                         key={task.id}

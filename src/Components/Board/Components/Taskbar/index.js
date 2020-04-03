@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TasksContext } from '../../Contexts/TasksContext';
+import { TasksContext } from '../../contexts/TasksContext';
 import '../../css/Taskbar.css';
 import Taskbar from './Taskbar';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { TasksContext } from './Contexts/TasksContext';
-import TaskbarContainer from './Components/Taskbar/index';
+import { TasksContext } from './contexts/TasksContext';
+import TaskbarContainer from './components/Taskbar/index';
 import './css/Board.css';
 
 const Board = () => {
