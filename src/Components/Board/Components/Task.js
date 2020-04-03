@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components-styles/Task.css';
+import '../css/Task.css';
 
 const Task = (props) => {
     const onDragStart = (event, id) => {

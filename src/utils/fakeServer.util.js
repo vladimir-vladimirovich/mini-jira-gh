@@ -12,7 +12,7 @@ class FakeServerUtil {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(this.tasksData);
-            }, 4500);
+            }, 2500);
         })
     };
 
@@ -21,7 +21,7 @@ class FakeServerUtil {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(this.taskbarConfig);
-            }, 2500);
+            }, 1500);
         })
     };
 }

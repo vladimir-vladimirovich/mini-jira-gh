@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Board } from './components/Board';
+import BoardContainer from './Components/Board/index';
 
 ReactDOM.render(
-  <Board />,
+  <BoardContainer />,
   document.getElementById('root')
 );
