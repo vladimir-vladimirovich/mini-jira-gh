@@ -6,4 +6,4 @@
 
 ## Github page update guide
 ### `npm run deploy`
-### `npm push origin master`
+### `git push origin master`
