@@ -1,26 +1,23 @@
 import React from 'react';
-import { TasksContext } from './contexts/TasksContext';
 import TaskbarContainer from './components/Taskbar/index';
+import { useSelector } from 'react-redux';
 import './css/Board.css';
 
 const Board = () => {
+    const taskbarData = useSelector(state => state.taskbarReducer);
     return (
-        <TasksContext.Consumer>
-            {(context) => (
-                <div className="board">
-                    <div className="board-taskbar-container">
-                        {context.taskbar.map((item) => {
-                            return (
-                                <TaskbarContainer
-                                    key={item.columnStatus}
-                                    status={item.columnStatus}
-                                />
-                            )
-                        })}
-                    </div>
-                </div>
-            )}
-        </TasksContext.Consumer>
+        <div className="board">
+            <div className="board-taskbar-container">
+                {taskbarData.map((item) => {
+                    return (
+                        <TaskbarContainer
+                            key={item.columnStatus}
+                            status={item.columnStatus}
+                        />
+                    )
+                })}
+            </div>
+        </div>
     )
 }
 

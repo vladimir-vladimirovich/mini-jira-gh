@@ -1,25 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TasksContext } from '../../contexts/TasksContext';
-import '../../css/Taskbar.css';
 import Taskbar from './Taskbar';
+import { connect } from 'react-redux';
+import { fakeServerUtil } from '../../../../utils/fakeServer.util';
+import { updateTasks } from '../../actions/index';
+import '../../css/Taskbar.css';
 
 class TaskbarContainer extends React.Component {
-    static contextType = TasksContext;
+    componentDidMount() {
+        this.updateTasks();
+    }
+
+    async updateTasks() {
+        let tasksData = await fakeServerUtil.getTasksData();
+        this.props.updateTasks(tasksData);
+    }
 
     onDragOver = (event) => {
         event.preventDefault();
     };
 
     onDrop = (event) => {
+        let { status } = this.props;
+        let { tasksReducer } = this.props.tasksStore;
         const id = event.dataTransfer.getData('taskId');
-        const updatedTasks = this.context.tasks.map(task => {
+        const updatedTasks = tasksReducer.map(task => {
             if (task.id === id) {
-                task.status = this.props.status;
+                task.status = status;
                 return task
             } else return task
         });
-        this.context.setTasks(updatedTasks);
+        this.props.updateTasks(updatedTasks);
     };
 
     render() {
@@ -34,7 +45,18 @@ class TaskbarContainer extends React.Component {
 }
 
 TaskbarContainer.propTypes = {
-    status: PropTypes.string.isRequired
+    updateTasks: PropTypes.func,
+    tasksStore: PropTypes.object,
+    status: PropTypes.string
 }
 
-export default TaskbarContainer;
+export default connect(
+    state => ({
+        tasksStore: state
+    }),
+    dispatch => ({
+        updateTasks: (tasks) => {
+            dispatch(updateTasks(tasks))
+        }
+    })
+)(TaskbarContainer);
