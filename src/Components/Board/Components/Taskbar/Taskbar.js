@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import TaskContainer from '../Task/index';
 import '../../css/Taskbar.css';
 
 const Taskbar = (props) => {
-    let { status, onDragOver, onDrop } = props;
-    const tasksData = useSelector(state => state.tasksReducer);
-
+    const { status, onDragOver, onDrop, tasksData } = props;
     return (
         <div className="taskbar">
             <div className="taskbar-title">
@@ -41,7 +38,8 @@ const Taskbar = (props) => {
 Taskbar.propTypes = {
     status: PropTypes.string.isRequired,
     onDragOver: PropTypes.func.isRequired,
-    onDrop: PropTypes.func.isRequired
+    onDrop: PropTypes.func.isRequired,
+    tasksData: PropTypes.array.isRequired
 }
 
 export default Taskbar;

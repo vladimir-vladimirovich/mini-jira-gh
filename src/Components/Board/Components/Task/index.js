@@ -8,7 +8,8 @@ class TasksContainer extends React.Component {
     }
 
     render() {
-        let { id, summary, assignee, project, img } = this.props;
+        const { onDragStart } = this;
+        const { id, summary, assignee, project, img } = this.props;
         return (
             <Task
                 id={id}
@@ -16,7 +17,7 @@ class TasksContainer extends React.Component {
                 assignee={assignee}
                 project={project}
                 img={img}
-                onDragStart={this.onDragStart}
+                onDragStart={onDragStart}
             />
         )
     }

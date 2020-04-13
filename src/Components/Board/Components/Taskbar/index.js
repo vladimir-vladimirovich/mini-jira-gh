@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Taskbar from './Taskbar';
 import { connect } from 'react-redux';
 import { fakeServerUtil } from '../../../../utils/fakeServer.util';
-import { updateTasks } from '../../actions/index';
+import * as actions from './actions';
+import * as selectors from './selectors';
 import '../../css/Taskbar.css';
 
 class TaskbarContainer extends React.Component {
@@ -12,8 +13,9 @@ class TaskbarContainer extends React.Component {
     }
 
     async updateTasks() {
-        let tasksData = await fakeServerUtil.getTasksData();
-        this.props.updateTasks(tasksData);
+        const { updateTasks } = this.props;
+        let fetchedTasksData = await fakeServerUtil.getTasksData();
+        updateTasks(fetchedTasksData);
     }
 
     onDragOver = (event) => {
@@ -21,42 +23,45 @@ class TaskbarContainer extends React.Component {
     };
 
     onDrop = (event) => {
-        let { status } = this.props;
-        let { tasksReducer } = this.props.tasksStore;
-        const id = event.dataTransfer.getData('taskId');
-        const updatedTasks = tasksReducer.map(task => {
-            if (task.id === id) {
+        let { status, updateTasks, tasks } = this.props;
+        const taskId = event.dataTransfer.getData('taskId');
+        let postDropTaskData = tasks.map(task => {
+            if (task.id === taskId) {
                 task.status = status;
                 return task
             } else return task
         });
-        this.props.updateTasks(updatedTasks);
+        updateTasks(postDropTaskData);
     };
 
     render() {
+        const { onDragOver, onDrop, props: { status, tasks } } = this;
         return (
             <Taskbar
-                onDragOver={this.onDragOver}
-                onDrop={this.onDrop}
-                status={this.props.status}
+                onDragOver={onDragOver}
+                onDrop={onDrop}
+                status={status}
+                tasksData={tasks}
             />
         );
     }
 }
 
 TaskbarContainer.propTypes = {
-    updateTasks: PropTypes.func,
-    tasksStore: PropTypes.object,
-    status: PropTypes.string
+    updateTasks: PropTypes.func.isRequired,
+    tasks: PropTypes.array.isRequired,
+    status: PropTypes.string.isRequired
 }
 
-export default connect(
+const enhance = connect(
     state => ({
-        tasksStore: state
+        tasks: selectors.getTasks(state)
     }),
     dispatch => ({
         updateTasks: (tasks) => {
-            dispatch(updateTasks(tasks))
+            dispatch(actions.updateTasks(tasks))
         }
     })
-)(TaskbarContainer);
+);
+
+export default enhance(TaskbarContainer);

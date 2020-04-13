@@ -3,25 +3,26 @@ import PropTypes from 'prop-types';
 import '../../css/Task.css';
 
 const Task = (props) => {
+    const { id, summary, assignee, project, img, onDragStart } = props;
     return (
         <div
             className="task"
             draggable="true"
-            onDragStart={props.onDragStart}
+            onDragStart={onDragStart}
         >
             <ul className="list">
-                <li>{props.id}</li>
-                <li>{props.summary}</li>
-                <li>{props.assignee}</li>
+                <li>{id}</li>
+                <li>{summary}</li>
+                <li>{assignee}</li>
                 <li>
                     <div className="item-status-div">
-                        <p>{props.project}</p>
+                        <p>{project}</p>
                     </div>
                 </li>
                 <li>
                     <img
                         className="image"
-                        src={props.img}
+                        src={img}
                         alt=''
                     />
                 </li>

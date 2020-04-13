@@ -1,14 +1,14 @@
 export const taskbarConfig = [
     {
-        columnStatus: "To Do"
+        columnName: "To Do"
     },
     {
-        columnStatus: "In Progress"
+        columnName: "In Progress"
     },
     {
-        columnStatus: "Ready for testing"
+        columnName: "Ready for testing"
     },
     {
-        columnStatus: "Completed"
+        columnName: "Completed"
     }
 ]

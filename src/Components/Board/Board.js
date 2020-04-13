@@ -1,24 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TaskbarContainer from './components/Taskbar/index';
-import { useSelector } from 'react-redux';
 import './css/Board.css';
 
-const Board = () => {
-    const taskbarData = useSelector(state => state.taskbarReducer);
+const Board = (props) => {
+    const { columnNames } = props;
     return (
         <div className="board">
             <div className="board-taskbar-container">
-                {taskbarData.map((item) => {
+                {columnNames.map((item) => {
                     return (
                         <TaskbarContainer
-                            key={item.columnStatus}
-                            status={item.columnStatus}
+                            key={item}
+                            status={item}
                         />
                     )
                 })}
             </div>
         </div>
     )
+}
+
+Board.propTypes = {
+    columnNames: PropTypes.array.isRequired
 }
 
 export default Board;
