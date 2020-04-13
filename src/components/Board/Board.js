@@ -8,11 +8,11 @@ const Board = (props) => {
     return (
         <div className="board">
             <div className="board-taskbar-container">
-                {columnNames.map((item) => {
+                {columnNames.map((columnName) => {
                     return (
                         <TaskbarContainer
-                            key={item}
-                            status={item}
+                            key={columnName}
+                            status={columnName}
                         />
                     )
                 })}

@@ -13,9 +13,9 @@ class TaskbarContainer extends React.Component {
     }
 
     async updateTasks() {
-        const { updateTasks } = this.props;
+        const { dispatch } = this.props;
         let fetchedTasksData = await fakeServerUtil.getTasksData();
-        updateTasks(fetchedTasksData);
+        dispatch(actions.updateTasks(fetchedTasksData));
     }
 
     onDragOver = (event) => {
@@ -23,7 +23,7 @@ class TaskbarContainer extends React.Component {
     };
 
     onDrop = (event) => {
-        let { status, updateTasks, tasks } = this.props;
+        let { status, dispatch, tasks } = this.props;
         const taskId = event.dataTransfer.getData('taskId');
         let postDropTaskData = tasks.map(task => {
             if (task.id === taskId) {
@@ -31,12 +31,12 @@ class TaskbarContainer extends React.Component {
                 return task
             } else return task
         });
-        updateTasks(postDropTaskData);
+        dispatch(actions.updateTasks(postDropTaskData));
     };
 
     render() {
         const { onDragOver, onDrop, props: { status, tasks } } = this;
-        return (
+        return (    
             <Taskbar
                 onDragOver={onDragOver}
                 onDrop={onDrop}
@@ -48,19 +48,14 @@ class TaskbarContainer extends React.Component {
 }
 
 TaskbarContainer.propTypes = {
-    updateTasks: PropTypes.func.isRequired,
+    dispatch: PropTypes.func,
     tasks: PropTypes.array.isRequired,
     status: PropTypes.string.isRequired
 }
 
 const enhance = connect(
-    state => ({
+    (state) => ({
         tasks: selectors.getTasks(state)
-    }),
-    dispatch => ({
-        updateTasks: (tasks) => {
-            dispatch(actions.updateTasks(tasks))
-        }
     })
 );
 

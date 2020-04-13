@@ -15,9 +15,10 @@ const Taskbar = (props) => {
                 onDragOver={onDragOver}
                 onDrop={onDrop}
             >
-                {tasksData.map((task) => {
-                    if (task.status === status) {
-                        return (
+                {
+                    tasksData
+                        .filter(task => task.status === status)
+                        .map(task => (
                             <TaskContainer
                                 key={task.id}
                                 id={task.id}
@@ -27,9 +28,8 @@ const Taskbar = (props) => {
                                 project={task.project}
                                 img={task.img}
                             />
-                        )
-                    }
-                })}
+                        ))
+                }
             </div>
         </div>
     );

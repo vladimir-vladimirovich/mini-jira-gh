@@ -1,1 +1,8 @@
-export const getTasks = (state) => state.tasksReducer;
+import { createSelector } from 'reselect';
+
+const getTasksMemo = (state) => state.tasksReducer;
+
+export const getTasks = createSelector(
+    getTasksMemo,
+    (tasks) => tasks
+)

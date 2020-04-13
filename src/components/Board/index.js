@@ -13,9 +13,9 @@ class BoardContainer extends React.Component {
     }
 
     async updateTaskbar() {
-        const { updateTaskbar } = this.props;
+        const { dispatch } = this.props;
         let taskbarData = await fakeServerUtil.getTaskbarConfig();
-        updateTaskbar(taskbarData);
+        dispatch(actions.updateTaskbar(taskbarData));
     }
 
     render() {
@@ -27,18 +27,14 @@ class BoardContainer extends React.Component {
 }
 
 BoardContainer.propTypes = {
+    dispatch: PropTypes.func,
     columnNames: PropTypes.array.isRequired
 }
 
 const enhance = compose(
     connect(
-        state => ({
+        (state) => ({
             columnNames: selectors.getColumnNames(state)
-        }),
-        dispatch => ({
-            updateTaskbar: (taskbar) => {
-                dispatch(actions.updateTaskbar(taskbar))
-            }
         })
     )
 )
