@@ -14,7 +14,7 @@ class TaskbarContainer extends React.Component {
 
     async updateTasks() {
         const { dispatch } = this.props;
-        let fetchedTasksData = await fakeServerUtil.getTasksData();
+        const fetchedTasksData = await fakeServerUtil.getTasksData();
 
         dispatch(actions.updateTasksAll(fetchedTasksData));
     }
@@ -24,7 +24,7 @@ class TaskbarContainer extends React.Component {
     };
 
     onDrop = (event) => {
-        let { status, dispatch } = this.props;
+        const { status, dispatch } = this.props;
         const taskId = event.dataTransfer.getData('taskId');
         
         dispatch(actions.updateTask({ id: taskId, status: status }))

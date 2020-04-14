@@ -14,7 +14,7 @@ class BoardContainer extends React.Component {
 
     async updateTaskbar() {
         const { dispatch } = this.props;
-        let taskbarData = await fakeServerUtil.getTaskbarConfig();
+        const taskbarData = await fakeServerUtil.getTaskbarConfig();
 
         dispatch(actions.updateTaskbar(taskbarData));
     }
