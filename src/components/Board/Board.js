@@ -5,17 +5,17 @@ import './css/Board.css';
 
 const Board = (props) => {
     const { columnNames } = props;
+
     return (
         <div className="board">
             <div className="board-taskbar-container">
-                {columnNames.map((columnName) => {
-                    return (
+                {
+                    columnNames.map((columnName) => (
                         <TaskbarContainer
                             key={columnName}
                             status={columnName}
-                        />
-                    )
-                })}
+                        />))
+                }
             </div>
         </div>
     )

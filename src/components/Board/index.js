@@ -15,11 +15,13 @@ class BoardContainer extends React.Component {
     async updateTaskbar() {
         const { dispatch } = this.props;
         let taskbarData = await fakeServerUtil.getTaskbarConfig();
+
         dispatch(actions.updateTaskbar(taskbarData));
     }
 
     render() {
         const { columnNames } = this.props;
+        
         return (
             <Board columnNames={columnNames} />
         )

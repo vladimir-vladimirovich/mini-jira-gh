@@ -1,6 +1,6 @@
 const taskbarReducer = (taskbar = [], action) => {
     switch (action.type) {
-        case 'UPDATE_TASKBAR':
+        case 'TASKBAR:UPDATE_ALL':
             return action.payload
         default:
             return taskbar

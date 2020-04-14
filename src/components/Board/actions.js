@@ -1,6 +1,10 @@
+/**
+ * Update whole store
+ * @param {Array.<Object>} taskbarData 
+ */
 export const updateTaskbar = (taskbarData) => {
     return {
-        type: 'UPDATE_TASKBAR',
+        type: 'TASKBAR:UPDATE_ALL',
         payload: taskbarData
     }
 }

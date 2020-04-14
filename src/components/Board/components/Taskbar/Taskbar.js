@@ -5,6 +5,7 @@ import '../../css/Taskbar.css';
 
 const Taskbar = (props) => {
     const { status, onDragOver, onDrop, tasksData } = props;
+
     return (
         <div className="taskbar">
             <div className="taskbar-title">
@@ -17,7 +18,6 @@ const Taskbar = (props) => {
             >
                 {
                     tasksData
-                        .filter(task => task.status === status)
                         .map(task => (
                             <TaskContainer
                                 key={task.id}
@@ -27,8 +27,7 @@ const Taskbar = (props) => {
                                 status={task.status}
                                 project={task.project}
                                 img={task.img}
-                            />
-                        ))
+                            />))
                 }
             </div>
         </div>

@@ -15,7 +15,8 @@ class TaskbarContainer extends React.Component {
     async updateTasks() {
         const { dispatch } = this.props;
         let fetchedTasksData = await fakeServerUtil.getTasksData();
-        dispatch(actions.updateTasks(fetchedTasksData));
+
+        dispatch(actions.updateTasksAll(fetchedTasksData));
     }
 
     onDragOver = (event) => {
@@ -23,39 +24,34 @@ class TaskbarContainer extends React.Component {
     };
 
     onDrop = (event) => {
-        let { status, dispatch, tasks } = this.props;
+        let { status, dispatch } = this.props;
         const taskId = event.dataTransfer.getData('taskId');
-        let postDropTaskData = tasks.map(task => {
-            if (task.id === taskId) {
-                task.status = status;
-                return task
-            } else return task
-        });
-        dispatch(actions.updateTasks(postDropTaskData));
+        
+        dispatch(actions.updateTask({ id: taskId, status: status }))
     };
 
     render() {
-        const { onDragOver, onDrop, props: { status, tasks } } = this;
-        return (    
+        const { onDragOver, onDrop, props: { status, tasksFilteredByStatus } } = this;
+
+        return (
             <Taskbar
                 onDragOver={onDragOver}
                 onDrop={onDrop}
                 status={status}
-                tasksData={tasks}
-            />
-        );
+                tasksData={tasksFilteredByStatus}
+            />);
     }
 }
 
 TaskbarContainer.propTypes = {
     dispatch: PropTypes.func,
-    tasks: PropTypes.array.isRequired,
+    tasksFilteredByStatus: PropTypes.array.isRequired,
     status: PropTypes.string.isRequired
 }
 
 const enhance = connect(
-    (state) => ({
-        tasks: selectors.getTasks(state)
+    (state, props) => ({
+        tasksFilteredByStatus: selectors.getTasksByStatus(state, props)
     })
 );
 

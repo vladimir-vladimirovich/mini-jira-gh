@@ -1,8 +1,10 @@
 import { createSelector } from 'reselect';
 
-const getTasksMemo = (state) => state.tasksReducer;
+const getTasksByStatusMemo = (state, props) => {
+    return state.tasksReducer.filter(task => task.status === props.status);
+}
 
-export const getTasks = createSelector(
-    getTasksMemo,
+export const getTasksByStatus = createSelector(
+    [getTasksByStatusMemo],
     (tasks) => tasks
-)
+);

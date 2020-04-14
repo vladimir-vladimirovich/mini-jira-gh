@@ -4,6 +4,7 @@ import '../../css/Task.css';
 
 const Task = (props) => {
     const { id, summary, assignee, project, img, onDragStart } = props;
+    
     return (
         <div
             className="task"

@@ -9,6 +9,7 @@ class TasksContainer extends React.Component {
 
     render() {
         const { id, summary, assignee, project, img } = this.props;
+        
         return (
             <Task
                 id={id}
