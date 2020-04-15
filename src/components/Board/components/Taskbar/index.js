@@ -19,27 +19,27 @@ class TaskbarContainer extends React.Component {
     };
 
     render() {
-        const { onDragOver, onDrop, props: { status, tasksFilteredByStatus } } = this;
+        const { onDragOver, onDrop, props: { status, tasks } } = this;
 
         return (
             <Taskbar
                 onDragOver={onDragOver}
                 onDrop={onDrop}
                 status={status}
-                tasksData={tasksFilteredByStatus}
+                tasksData={tasks}
             />);
     }
 }
 
 TaskbarContainer.propTypes = {
     dispatch: PropTypes.func,
-    tasksFilteredByStatus: PropTypes.array.isRequired,
+    tasks: PropTypes.array.isRequired,
     status: PropTypes.string.isRequired
 }
 
 const enhance = connect(
     (state, props) => ({
-        tasksFilteredByStatus: selectors.getTasksByStatus(state, props)
+        tasks: selectors.getTasks(state, props)
     })
 );
 
