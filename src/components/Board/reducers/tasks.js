@@ -1,20 +1,21 @@
-const tasksReducer = (tasks = [], action) => {
+import { produce } from 'immer';
+
+const tasksReducer = (state = [], action) => produce(state, (draftState) => {
     switch (action.type) {
         case 'TASKS:UPDATE_ALL':
             return action.payload
         case 'TASKS:UPDATE_ITEM': {
-            const newTasks = [...tasks];
-            const index = newTasks.findIndex((task) => task.id === action.payload.id);
-            
-            newTasks[index] = {
-                ...newTasks[index],
+            const index = draftState.findIndex((task) => task.id === action.payload.id);
+
+            draftState[index] = {
+                ...draftState[index],
                 ...action.payload
             }
-            return newTasks;
+            break;
         }
         default:
-            return tasks
+            return state;
     }
-}
+})
 
 export default tasksReducer;
