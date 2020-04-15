@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/mini-jira-gh/static/css/main.2dd4ca46.chunk.css",
-    "main.js": "/mini-jira-gh/static/js/main.69841d23.chunk.js",
-    "main.js.map": "/mini-jira-gh/static/js/main.69841d23.chunk.js.map",
+    "main.js": "/mini-jira-gh/static/js/main.3f6eda6b.chunk.js",
+    "main.js.map": "/mini-jira-gh/static/js/main.3f6eda6b.chunk.js.map",
     "runtime-main.js": "/mini-jira-gh/static/js/runtime-main.0c95ebe7.js",
     "runtime-main.js.map": "/mini-jira-gh/static/js/runtime-main.0c95ebe7.js.map",
-    "static/js/2.45eab4bb.chunk.js": "/mini-jira-gh/static/js/2.45eab4bb.chunk.js",
-    "static/js/2.45eab4bb.chunk.js.map": "/mini-jira-gh/static/js/2.45eab4bb.chunk.js.map",
+    "static/js/2.8f35755b.chunk.js": "/mini-jira-gh/static/js/2.8f35755b.chunk.js",
+    "static/js/2.8f35755b.chunk.js.map": "/mini-jira-gh/static/js/2.8f35755b.chunk.js.map",
     "index.html": "/mini-jira-gh/index.html",
-    "precache-manifest.3a5290011563b165929c38b86b59993b.js": "/mini-jira-gh/precache-manifest.3a5290011563b165929c38b86b59993b.js",
+    "precache-manifest.88ed6626d042e4be59bd469ec25fe811.js": "/mini-jira-gh/precache-manifest.88ed6626d042e4be59bd469ec25fe811.js",
     "service-worker.js": "/mini-jira-gh/service-worker.js",
     "static/css/main.2dd4ca46.chunk.css.map": "/mini-jira-gh/static/css/main.2dd4ca46.chunk.css.map",
-    "static/js/2.45eab4bb.chunk.js.LICENSE.txt": "/mini-jira-gh/static/js/2.45eab4bb.chunk.js.LICENSE.txt"
+    "static/js/2.8f35755b.chunk.js.LICENSE.txt": "/mini-jira-gh/static/js/2.8f35755b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0c95ebe7.js",
-    "static/js/2.45eab4bb.chunk.js",
+    "static/js/2.8f35755b.chunk.js",
     "static/css/main.2dd4ca46.chunk.css",
-    "static/js/main.69841d23.chunk.js"
+    "static/js/main.3f6eda6b.chunk.js"
   ]
 }
