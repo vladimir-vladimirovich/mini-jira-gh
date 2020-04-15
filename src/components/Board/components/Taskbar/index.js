@@ -2,23 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Taskbar from './Taskbar';
 import { connect } from 'react-redux';
-import { fakeServerUtil } from '../../../../utils/fakeServer.util';
 import * as actions from './actions';
 import * as selectors from './selectors';
 import '../../css/Taskbar.css';
 
 class TaskbarContainer extends React.Component {
-    componentDidMount() {
-        this.updateTasks();
-    }
-
-    async updateTasks() {
-        const { dispatch } = this.props;
-        const fetchedTasksData = await fakeServerUtil.getTasksData();
-
-        dispatch(actions.updateTasksAll(fetchedTasksData));
-    }
-
     onDragOver = (event) => {
         event.preventDefault();
     };

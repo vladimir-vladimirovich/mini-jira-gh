@@ -10,6 +10,7 @@ import * as selectors from './selectors';
 class BoardContainer extends React.Component {
     componentDidMount() {
         this.updateTaskbar();
+        this.updateTasks();
     }
 
     async updateTaskbar() {
@@ -19,9 +20,16 @@ class BoardContainer extends React.Component {
         dispatch(actions.updateTaskbar(taskbarData));
     }
 
+    async updateTasks() {
+        const { dispatch } = this.props;
+        const fetchedTasksData = await fakeServerUtil.getTasksData();
+
+        dispatch(actions.updateTasksAll(fetchedTasksData));
+    }
+
     render() {
         const { columnNames } = this.props;
-        
+
         return (
             <Board columnNames={columnNames} />
         )

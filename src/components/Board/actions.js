@@ -8,3 +8,14 @@ export const updateTaskbar = (taskbarData) => {
         payload: taskbarData
     }
 }
+
+/**
+ * Update whole store
+ * @param {Array.<Object>} tasks 
+ */
+export const updateTasksAll = (tasks) => {
+    return {
+        type: 'TASKS:UPDATE_ALL',
+        payload: tasks
+    }
+}
