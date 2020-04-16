@@ -1,11 +1,14 @@
 [Github pages link](https://vladimir-vladimirovich.github.io/mini-jira-gh/)
 
-## Installation guide
-### `npm install`
+### Installation:
+#### `npm install`
 
-## Luanch project guide
-### `npm run start`
+### Luanch project:
+#### `npm run start`
 
-## Github page update guide
-### `npm run deploy`
-### `git push origin master`
+### Run eslint:
+#### `npm run lint`
+
+### Github page update:
+#### `npm run deploy`
+#### `git push origin master`

@@ -14,17 +14,17 @@ class TaskbarContainer extends React.Component {
     onDrop = (event) => {
         const { status, dispatch } = this.props;
         const taskId = event.dataTransfer.getData('taskId');
-        
+
         dispatch(actions.updateTask({ id: taskId, status: status }))
     };
 
     render() {
-        const { onDragOver, onDrop, props: { status, tasks } } = this;
+        const { status, tasks } = this.props;
 
         return (
             <Taskbar
-                onDragOver={onDragOver}
-                onDrop={onDrop}
+                onDragOver={this.onDragOver}
+                onDrop={this.onDrop}
                 status={status}
                 tasksData={tasks}
             />);
