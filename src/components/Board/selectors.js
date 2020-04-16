@@ -1,4 +1,3 @@
-import { createSelector } from 'reselect';
 import * as reduxUtil from '../../utils/redux.util';
 
 const getColumnNamesMemo = (state) => state.taskbarReducer;

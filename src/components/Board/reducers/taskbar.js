@@ -7,7 +7,6 @@ const taskbarReducer = (state = [], action) => produce(state, (draftState) => {
         default:
             return draftState;
     }
-
 })
 
 export default taskbarReducer;
