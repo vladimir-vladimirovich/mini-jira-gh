@@ -2,7 +2,9 @@
 
 ## Installation guide
 ### `npm install`
-### `npm start`
+
+## Luanch project guide
+### `npm run start`
 
 ## Github page update guide
 ### `npm run deploy`
