@@ -8,9 +8,3 @@ export const getColumnNames = reduxUtil.createDeepEqualSelector(
     (columnNames) => columnNames.map(
         (taskbarItem) => taskbarItem.columnName)
 )
-
-// export const getColumnNames = createSelector(
-//     getColumnNamesMemo,
-//     (columnNames) => columnNames.map(
-//         (taskbarItem) => taskbarItem.columnName)
-// )
