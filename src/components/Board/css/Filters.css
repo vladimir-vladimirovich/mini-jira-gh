@@ -1,0 +1,12 @@
+.filtersPanel {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 10px;
+    align-items: center;
+}
+
+.filter-button {
+    box-shadow: 0px 3px 7px rgb(221, 221, 221);
+    border-radius: 5px;
+    padding: 10px;
+}

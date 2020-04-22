@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Task from './Task';
 
-class TasksContainer extends React.Component {
+class TaskContainer extends React.Component {
     onDragStart = (event) => {
         event.dataTransfer.setData('taskId', this.props.id);
     }
@@ -23,7 +23,7 @@ class TasksContainer extends React.Component {
     }
 }
 
-TasksContainer.propTypes = {
+TaskContainer.propTypes = {
     id: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     assignee: PropTypes.string.isRequired,
@@ -31,4 +31,4 @@ TasksContainer.propTypes = {
     img: PropTypes.string
 }
 
-export default TasksContainer;
+export default TaskContainer;

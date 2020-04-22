@@ -8,5 +8,5 @@ export const updateTask = (properties) => {
         payload: {
             ...properties
         }
-    }
+    };
 }

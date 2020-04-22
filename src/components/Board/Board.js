@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TaskbarContainer from './components/Taskbar/index';
 import './css/Board.css';
+import FiltersContainer from './components/Filters/index';
 
 const Board = (props) => {
-    const { columnNames } = props;
+    const { columnNames} = props;
 
     return (
         <div className="board">
+            <FiltersContainer />
             <div className="board-taskbar-container">
                 {
                     columnNames.map((columnName) => (

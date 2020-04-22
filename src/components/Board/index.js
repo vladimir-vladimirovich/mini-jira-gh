@@ -11,6 +11,7 @@ class BoardContainer extends React.Component {
     componentDidMount() {
         this.updateTaskbar();
         this.updateTasks();
+        this.updateFilters();
     }
 
     async updateTaskbar() {
@@ -22,9 +23,16 @@ class BoardContainer extends React.Component {
 
     async updateTasks() {
         const { dispatch } = this.props;
-        const fetchedTasksData = await fakeServerUtil.getTasksData();
+        const tasksData = await fakeServerUtil.getTasksData();
 
-        dispatch(actions.updateTasksAll(fetchedTasksData));
+        dispatch(actions.updateTasksAll(tasksData));
+    }
+
+    async updateFilters() {
+        const { dispatch } = this.props;
+        const filtersData = await fakeServerUtil.getFiltersConfig();
+
+        dispatch(actions.updateFilters(filtersData));
     }
 
     render() {
@@ -38,13 +46,13 @@ class BoardContainer extends React.Component {
 
 BoardContainer.propTypes = {
     dispatch: PropTypes.func,
-    columnNames: PropTypes.array.isRequired
+    columnNames: PropTypes.array.isRequired,
 }
 
 const enhance = compose(
     connect(
         (state) => ({
-            columnNames: selectors.getColumnNames(state)
+            columnNames: selectors.getColumnNames(state),
         })
     )
 )

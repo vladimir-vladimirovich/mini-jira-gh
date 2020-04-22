@@ -1,13 +1,15 @@
 import { tasksData } from '../data/tasksData';
-import { taskbarConfig } from '../config/taskbarConfig';
+import { taskbarConfig } from '../config/taskbar';
+import { filtersConfig } from '../config/filters';
 
+// Class developed in order to emulate async server calls
 class FakeServerUtil {
     constructor() {
         this.tasksData = tasksData;
         this.taskbarConfig = taskbarConfig;
+        this.filtersConfig = filtersConfig;
     }
 
-    // In order to emulate request/response
     async getTasksData() {
         return new Promise((resolve) => {
             setTimeout(() => {
@@ -16,12 +18,19 @@ class FakeServerUtil {
         })
     }
 
-    // In order to emulate request/response
     async getTaskbarConfig() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(this.taskbarConfig);
             }, 100);
+        })
+    }
+
+    async getFiltersConfig() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(this.filtersConfig)
+            }, 100)
         })
     }
 }
