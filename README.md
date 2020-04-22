@@ -4,11 +4,10 @@
 #### `npm install`
 
 ### Luanch project:
-#### `npm run start`
+#### `npm start`
 
 ### Run eslint:
 #### `npm run lint`
 
 ### Github page update:
 #### `npm run deploy`
-#### `git push origin master`
