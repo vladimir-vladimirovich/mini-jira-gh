@@ -1,3 +1,4 @@
+### Pre-build static
 [Github pages link](https://vladimir-vladimirovich.github.io/mini-jira-gh/)
 
 ### Installation:
