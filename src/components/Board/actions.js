@@ -26,7 +26,7 @@ export const updateTasksAll = (tasks) => {
  */
 export const updateFilters = (filters) => {
     return {
-        type: 'FILTERS:UPDATE',
-        paylaod: filters
+        type: 'FILTERS:SET',
+        payload: filters
     }
 }

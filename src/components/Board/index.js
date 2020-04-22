@@ -31,7 +31,7 @@ class BoardContainer extends React.Component {
     async updateFilters() {
         const { dispatch } = this.props;
         const filtersData = await fakeServerUtil.getFiltersConfig();
-
+        
         dispatch(actions.updateFilters(filtersData));
     }
 

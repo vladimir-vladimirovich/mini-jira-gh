@@ -12,4 +12,4 @@ export const getTasks = createSelector(
 export const getFilters = reduxUtil.createDeepEqualSelector(
     [getFiltersMemo],
     (filters) => filters
-)
+);

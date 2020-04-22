@@ -3,30 +3,15 @@ import FiltersPanel from './Filters';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as selectors from './selectors';
-
-import * as actions from '../../actions';
-import { fakeServerUtil } from '../../../../utils/fakeServer.util';
+import * as actions from './actions';
 
 class FiltersContainer extends React.Component {
     applyFilter = (event) => {
         event.preventDefault();
 
-        const { dispatch, filters } = this.props;
-        const filterOptions = filters.find((item) => item.id === event.target.id)
+        const { dispatch } = this.props;
 
-        fakeServerUtil.getTasksData()
-            .then((tasksData) => {
-                let updatedTasks = tasksData;
-        
-                if (filterOptions.project) {
-                    updatedTasks = updatedTasks.filter((task) => task.project === filterOptions.project);
-                }
-                if (filterOptions.summary) {
-                    updatedTasks = updatedTasks.filter((task) => task.project === filterOptions.summary);
-                }
-        
-                dispatch(actions.updateTasksAll(updatedTasks));        
-            })
+        dispatch(actions.setActiveFilter(event.target.id));
     }
 
     render() {

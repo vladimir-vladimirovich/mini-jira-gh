@@ -8,6 +8,7 @@ const tasksReducer = (state = [], action) => produce(state, (draftState) => {
             const task = draftState.find((task) => task.id === action.payload.id);
 
             Object.assign(task, action.payload);
+
             break;
         default:
             return state;
