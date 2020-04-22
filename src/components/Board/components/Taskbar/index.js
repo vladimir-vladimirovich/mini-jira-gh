@@ -15,7 +15,7 @@ class TaskbarContainer extends React.Component {
         const { status, dispatch } = this.props;
         const taskId = event.dataTransfer.getData('taskId');
 
-        dispatch(actions.updateTask({ id: taskId, status: status }));
+        dispatch(actions.updateTask({ id: taskId, status }));
     };
 
     render() {
@@ -35,7 +35,7 @@ TaskbarContainer.propTypes = {
     dispatch: PropTypes.func,
     tasks: PropTypes.array.isRequired,
     status: PropTypes.string.isRequired
-}
+};
 
 const enhance = connect(
     (state, props) => ({

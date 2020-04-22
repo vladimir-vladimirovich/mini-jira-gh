@@ -22,20 +22,18 @@ class FiltersContainer extends React.Component {
                 filters={filters}
                 applyFilter={this.applyFilter}
             />
-        )
+        );
     }
 }
 
 FiltersContainer.propTypes = {
     dispatch: PropTypes.func,
-    filters: PropTypes.array.isRequired,
-    tasks: PropTypes.array.isRequired
-}
+    filters: PropTypes.array.isRequired
+};
 
 const enhance = connect(
     (state) => ({
-        filters: selectors.getFilters(state),
-        tasks: selectors.getTasks(state)
+        filters: selectors.getFilters(state)
     })
 );
 

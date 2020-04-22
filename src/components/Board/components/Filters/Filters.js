@@ -14,6 +14,7 @@ const FiltersPanel = (props) => {
                 filters.map((filter) => (
                     <dd key={filter.id}>
                         <button
+                            type="submit"
                             id={filter.id}
                             className="filter-button"
                             onClick={applyFilter}
@@ -24,11 +25,12 @@ const FiltersPanel = (props) => {
                 ))
             }
         </div>
-    )
-}
+    );
+};
 
 FiltersPanel.propTypes = {
-    filters: PropTypes.array.isRequired
-}
+    filters: PropTypes.array.isRequired,
+    applyFilter: PropTypes.func.isRequired
+};
 
 export default FiltersPanel;

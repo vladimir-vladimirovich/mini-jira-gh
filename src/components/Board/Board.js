@@ -5,7 +5,7 @@ import './css/Board.css';
 import FiltersContainer from './components/Filters/index';
 
 const Board = (props) => {
-    const { columnNames} = props;
+    const { columnNames } = props;
 
     return (
         <div className="board">
@@ -20,11 +20,11 @@ const Board = (props) => {
                 }
             </div>
         </div>
-    )
-}
+    );
+};
 
 Board.propTypes = {
     columnNames: PropTypes.array.isRequired
-}
+};
 
 export default Board;

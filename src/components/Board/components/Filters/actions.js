@@ -3,4 +3,4 @@ export const setActiveFilter = (filterId) => {
         type: 'FILTERS:SET_ACTIVE',
         payload: filterId
     };
-}
+};

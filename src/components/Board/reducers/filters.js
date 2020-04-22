@@ -1,30 +1,24 @@
 import { produce } from 'immer';
-import { filtersConfig } from '../../../config/filters';
 
-const defaultState = filtersConfig;
-
-const filtersReducer = (state = defaultState, action) => produce(state, (draftState) => {
+const filtersReducer = (state = [], action) => produce(state, (draftState) => {
     switch (action.type) {
         case 'FILTERS:SET':
-            const filters = action.payload.map((filter) => ({ ...filter }));
-
-            filters.forEach((filter) => filter.active = false);
-            // return filters;
-            Object.assign(draftState, { ...filters });
+            Object.assign(draftState, action.payload.map((filter) => ({
+                ...filter,
+                active: false
+            })));
 
             break;
         case 'FILTERS:SET_ACTIVE':
-            const filter = draftState.find((filter) => filter.id === action.payload);
+            const payLoadFilter = draftState.find((filter) => filter.id === action.payload);
 
-            Object.assign(draftState, {
-                ...draftState.forEach((filter) => filter.active = false)
-            })
-            filter.active = true;
+            draftState.forEach((filter) => {
+                filter.active = false;
+            });
+            payLoadFilter.active = true;
 
             break;
-        default:
-            return draftState;
     }
-})
+});
 
 export default filtersReducer;

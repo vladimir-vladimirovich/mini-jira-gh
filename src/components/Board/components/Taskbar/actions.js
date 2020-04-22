@@ -1,6 +1,6 @@
 /**
  * Update single object item in array
- * @param {Object} properties 
+ * @param {Object} properties
  */
 export const updateTask = (properties) => {
     return {
@@ -9,4 +9,4 @@ export const updateTask = (properties) => {
             ...properties
         }
     };
-}
+};

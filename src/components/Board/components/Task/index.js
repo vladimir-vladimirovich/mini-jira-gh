@@ -9,7 +9,7 @@ class TaskContainer extends React.Component {
 
     render() {
         const { id, summary, assignee, project, img } = this.props;
-        
+
         return (
             <Task
                 id={id}
@@ -19,7 +19,7 @@ class TaskContainer extends React.Component {
                 img={img}
                 onDragStart={this.onDragStart}
             />
-        )
+        );
     }
 }
 
@@ -29,6 +29,6 @@ TaskContainer.propTypes = {
     assignee: PropTypes.string.isRequired,
     project: PropTypes.string.isRequired,
     img: PropTypes.string
-}
+};
 
 export default TaskContainer;

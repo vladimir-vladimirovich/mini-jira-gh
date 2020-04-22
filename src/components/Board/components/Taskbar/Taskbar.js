@@ -32,13 +32,13 @@ const Taskbar = (props) => {
             </div>
         </div>
     );
-}
+};
 
 Taskbar.propTypes = {
     status: PropTypes.string.isRequired,
     onDragOver: PropTypes.func.isRequired,
     onDrop: PropTypes.func.isRequired,
     tasksData: PropTypes.array.isRequired
-}
+};
 
 export default Taskbar;

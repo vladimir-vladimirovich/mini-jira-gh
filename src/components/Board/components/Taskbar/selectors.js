@@ -15,8 +15,10 @@ const getTasksMemo = (state, props) => {
         }
 
         return tasks;
-    } else return state.tasksReducer.filter((task) => task.status === props.status);
-}
+    }
+
+    return state.tasksReducer.filter((task) => task.status === props.status);
+};
 
 export const getTasks = createSelector(
     [getTasksMemo],

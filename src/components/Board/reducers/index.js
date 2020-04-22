@@ -7,6 +7,6 @@ const boardReducers = combineReducers({
     taskbarReducer,
     tasksReducer,
     filtersReducer
-})
+});
 
 export default boardReducers;

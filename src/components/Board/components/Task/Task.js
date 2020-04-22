@@ -4,7 +4,7 @@ import '../../css/Task.css';
 
 const Task = (props) => {
     const { id, summary, assignee, project, img, onDragStart } = props;
-    
+
     return (
         <div
             className="task"
@@ -24,13 +24,13 @@ const Task = (props) => {
                     <img
                         className="image"
                         src={img}
-                        alt=''
+                        alt=""
                     />
                 </li>
             </ul>
         </div>
-    )
-}
+    );
+};
 
 Task.propTypes = {
     id: PropTypes.string.isRequired,
@@ -39,6 +39,6 @@ Task.propTypes = {
     project: PropTypes.string.isRequired,
     img: PropTypes.string,
     onDragStart: PropTypes.func.isRequired
-}
+};
 
 export default Task;

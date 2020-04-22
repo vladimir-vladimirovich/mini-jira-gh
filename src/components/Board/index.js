@@ -31,7 +31,7 @@ class BoardContainer extends React.Component {
     async updateFilters() {
         const { dispatch } = this.props;
         const filtersData = await fakeServerUtil.getFiltersConfig();
-        
+
         dispatch(actions.updateFilters(filtersData));
     }
 
@@ -40,21 +40,21 @@ class BoardContainer extends React.Component {
 
         return (
             <Board columnNames={columnNames} />
-        )
+        );
     }
 }
 
 BoardContainer.propTypes = {
     dispatch: PropTypes.func,
-    columnNames: PropTypes.array.isRequired,
-}
+    columnNames: PropTypes.array.isRequired
+};
 
 const enhance = compose(
     connect(
         (state) => ({
-            columnNames: selectors.getColumnNames(state),
+            columnNames: selectors.getColumnNames(state)
         })
     )
-)
+);
 
-export default enhance(BoardContainer)
+export default enhance(BoardContainer);

@@ -10,28 +10,28 @@ class FakeServerUtil {
         this.filtersConfig = filtersConfig;
     }
 
-    async getTasksData() {
+    getTasksData() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(this.tasksData);
             }, 100);
-        })
+        });
     }
 
-    async getTaskbarConfig() {
+    getTaskbarConfig() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(this.taskbarConfig);
             }, 100);
-        })
+        });
     }
 
-    async getFiltersConfig() {
+    getFiltersConfig() {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(this.filtersConfig)
-            }, 100)
-        })
+                resolve(this.filtersConfig);
+            }, 100);
+        });
     }
 }
 
