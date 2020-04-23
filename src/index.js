@@ -4,7 +4,7 @@ import './index.css';
 import BoardContainer from './components/Board/index';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import boardReducers from './components/Board/reducers/index';
+import boardReducers from './components/Board/reducers/board';
 
 const boardStore = createStore(
     boardReducers,

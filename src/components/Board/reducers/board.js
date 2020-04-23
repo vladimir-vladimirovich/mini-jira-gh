@@ -1,16 +1,35 @@
 import { produce } from 'immer';
 
 const defaultState = {
+    taskbar: [],
+    tasks: [],
     filters: []
 };
 
-const filtersReducer = (state = defaultState, action) => produce(state, (draftState) => {
+const boardReducer = (state = defaultState, action) => produce(state, (draftState) => {
     switch (action.type) {
+        case 'TASKBAR:UPDATE_ALL':
+            Object.assign(draftState, {
+                taskbar: action.payload
+            });
+
+            break;
+        case 'TASKS:UPDATE_ALL':
+            Object.assign(draftState, {
+                tasks: action.payload
+            });
+
+            break;
+        case 'TASKS:UPDATE_ITEM':
+            const updateItem = draftState.tasks.find((task) => task.id === action.payload.id);
+
+            Object.assign(updateItem, action.payload);
+
+            break;
         case 'FILTERS:SET':
             action.payload.forEach((filter) => {
                 filter.active = false;
             });
-            // draftState.filters = action.payload;
             Object.assign(draftState, {
                 filters: action.payload
             });
@@ -28,4 +47,4 @@ const filtersReducer = (state = defaultState, action) => produce(state, (draftSt
     }
 });
 
-export default filtersReducer;
+export default boardReducer;
