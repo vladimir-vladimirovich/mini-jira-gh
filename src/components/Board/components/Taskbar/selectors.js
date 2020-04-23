@@ -1,11 +1,10 @@
 import { createSelector } from 'reselect';
 
 const getTasksMemo = (state, props) => {
-    const activeFilter = state.filtersReducer.find((filter) => filter.active);
+    const activeFilter = state.filtersReducer.filters.find((filter) => filter.active);
 
     if (activeFilter) {
-        let tasks = [...state.tasksReducer];
-
+        let tasks = [...state.tasksReducer.tasks];
         tasks = tasks.filter((task) => task.status === props.status);
         if (activeFilter.assignee) {
             tasks = tasks.filter((task) => task.assignee === activeFilter.assignee);
@@ -17,7 +16,7 @@ const getTasksMemo = (state, props) => {
         return tasks;
     }
 
-    return state.tasksReducer.filter((task) => task.status === props.status);
+    return state.tasksReducer.tasks.filter((task) => task.status === props.status);
 };
 
 export const getTasks = createSelector(

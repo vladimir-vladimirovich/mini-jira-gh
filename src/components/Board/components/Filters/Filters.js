@@ -8,7 +8,7 @@ const FiltersPanel = (props) => {
     return (
         <div className="filtersPanel">
             <dt>
-                QUICK FILTERS:
+                {'QUICK FILTERS:'}
             </dt>
             {
                 filters.map((filter) => (
