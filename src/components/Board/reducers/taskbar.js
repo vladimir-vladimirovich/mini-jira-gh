@@ -1,11 +1,15 @@
 import { produce } from 'immer';
 
-const taskbarReducer = (state = [], action) => produce(state, (draftState) => {
+const defaultState = {
+    taskbar: []
+};
+
+const taskbarReducer = (state = defaultState, action) => produce(state, (draftState) => {
     switch (action.type) {
         case 'TASKBAR:UPDATE_ALL':
-            return action.payload;
-        default:
-            return draftState;
+            Object.assign(draftState, {
+                taskbar: action.payload
+            });
     }
 });
 

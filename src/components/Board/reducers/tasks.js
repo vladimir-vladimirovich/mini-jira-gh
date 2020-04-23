@@ -1,18 +1,24 @@
 import { produce } from 'immer';
 
-// eslint-disable-next-line consistent-return
-const tasksReducer = (state = [], action) => produce(state, (draftState) => {
+const defaultState = {
+    tasks: []
+};
+
+const tasksReducer = (state = defaultState, action) => produce(state, (draftState) => {
     switch (action.type) {
         case 'TASKS:UPDATE_ALL':
-            return action.payload;
+            // draftState.tasks = action.payload;
+            Object.assign(draftState, {
+                tasks: action.payload
+            });
+
+            break;
         case 'TASKS:UPDATE_ITEM':
-            const updateItem = draftState.find((task) => task.id === action.payload.id);
+            const updateItem = draftState.tasks.find((task) => task.id === action.payload.id);
 
             Object.assign(updateItem, action.payload);
 
             break;
-        default:
-            return state;
     }
 });
 
