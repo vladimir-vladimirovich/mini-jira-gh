@@ -1,13 +1,19 @@
 import { produce } from 'immer';
 
-const filtersReducer = (state = {}, action) => produce(state, (draftState) => {
+const defaultState = {
+    filters: []
+};
+
+const filtersReducer = (state = defaultState, action) => produce(state, (draftState) => {
     switch (action.type) {
         case 'FILTERS:SET':
-            console.log('[FILTERS] REDUCER [FILTERS:SET] state');
             action.payload.forEach((filter) => {
                 filter.active = false;
             });
-            draftState.filters = action.payload;
+            // draftState.filters = action.payload;
+            Object.assign(draftState, {
+                filters: action.payload
+            });
 
             break;
         case 'FILTERS:SET_ACTIVE':
@@ -19,9 +25,6 @@ const filtersReducer = (state = {}, action) => produce(state, (draftState) => {
             payLoadFilter.active = true;
 
             break;
-        default:
-            console.log('[FILTERS] REDUCER [DEFAULT] state');
-            draftState.filters = [];
     }
 });
 

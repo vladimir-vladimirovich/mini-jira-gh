@@ -1,10 +1,10 @@
 import * as reduxUtil from '../../utils/redux.util';
 
-const getColumnNamesMemo = (state) => state.taskbarReducer;
+const getColumnNamesMemo = (state) => state.taskbarReducer.taskbar;
 
 export const getColumnNames = reduxUtil.createDeepEqualSelector(
     [getColumnNamesMemo],
-    (columnNames) => columnNames.map(
+    (taskbar) => taskbar.map(
         (taskbarItem) => taskbarItem.columnName
     )
 );
