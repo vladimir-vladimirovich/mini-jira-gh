@@ -9,25 +9,28 @@ const defaultState = {
 
 const boardReducer = (state = defaultState, action) => produce(state, (draftState) => {
     switch (action.type) {
-        case 'TASKBAR:UPDATE_ALL':
+        case 'TASKBAR:UPDATE_ALL': {
             Object.assign(draftState, {
                 taskbar: action.payload
             });
 
             break;
-        case 'TASKS:UPDATE_ALL':
+        }
+        case 'TASKS:UPDATE_ALL': {
             Object.assign(draftState, {
                 tasks: action.payload
             });
 
             break;
-        case 'TASKS:UPDATE_ITEM':
+        }
+        case 'TASKS:UPDATE_ITEM': {
             const updateItem = draftState.tasks.find((task) => task.id === action.payload.id);
 
             Object.assign(updateItem, action.payload);
 
             break;
-        case 'FILTERS:SET':
+        }
+        case 'FILTERS:SET': {
             action.payload.forEach((filter) => {
                 filter.active = false;
             });
@@ -36,7 +39,8 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
             });
 
             break;
-        case 'FILTERS:SET_ACTIVE':
+        }
+        case 'FILTERS:SET_ACTIVE': {
             const payLoadFilter = draftState.filters.find((filter) => filter.id === action.payload);
 
             draftState.filters.forEach((filter) => {
@@ -45,8 +49,12 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
             payLoadFilter.active = true;
 
             break;
-        case 'SEARCH:SET_QUERY':
+        }
+        case 'SEARCH:SET_QUERY': {
             draftState.searchQuery = action.payload;
+
+            break;
+        }
     }
 });
 
