@@ -3,7 +3,8 @@ import { produce } from 'immer';
 const defaultState = {
     taskbar: [],
     tasks: [],
-    filters: []
+    filters: [],
+    searchQuery: ''
 };
 
 const boardReducer = (state = defaultState, action) => produce(state, (draftState) => {
@@ -44,6 +45,8 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
             payLoadFilter.active = true;
 
             break;
+        case 'SEARCH:SET_QUERY':
+            draftState.searchQuery = action.payload;
     }
 });
 

@@ -1,29 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../css/Filters.css';
+import SearchContainer from '../Search/index';
 
 const FiltersPanel = (props) => {
     const { filters, applyFilter } = props;
 
     return (
         <div className="filtersPanel">
-            <dt>
-                {'QUICK FILTERS:'}
-            </dt>
-            {
-                filters.map((filter) => (
-                    <dd key={filter.id}>
-                        <button
-                            type="submit"
-                            id={filter.id}
-                            className="filter-button"
-                            onClick={applyFilter}
-                        >
-                            {filter.name}
-                        </button>
-                    </dd>
-                ))
-            }
+            <div className="quick-filters-container">
+                <dt>
+                    {'QUICK FILTERS:'}
+                </dt>
+                {
+                    filters.map((filter) => (
+                        <dd key={filter.id}>
+                            <button
+                                type="submit"
+                                id={filter.id}
+                                className="filter-button"
+                                onClick={applyFilter}
+                            >
+                                {filter.name}
+                            </button>
+                        </dd>
+                    ))
+                }
+            </div>
+            <div className="quick-search-container">
+                <SearchContainer />
+            </div>
         </div>
     );
 };

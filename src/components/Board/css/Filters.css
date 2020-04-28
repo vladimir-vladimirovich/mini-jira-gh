@@ -1,12 +1,32 @@
 .filtersPanel {
     display: flex;
-    flex-flow: row nowrap;
+    /* flex-flow: row nowrap;
     padding: 10px;
+    align-items: center; */
+}
+
+.quick-filters-container {
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
+    padding: 10px;
+}
+
+.quick-search-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.quick-search {
+    border-radius: 5px;
+    padding: 8px;
 }
 
 .filter-button {
     box-shadow: 0px 3px 7px rgb(221, 221, 221);
     border-radius: 5px;
-    padding: 10px;
+    padding: 8px;
 }
