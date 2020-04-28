@@ -6,7 +6,7 @@ const Search = (props) => {
     const { onChange } = props;
 
     return (
-        <input type="text" className="quick-search" onChange={onChange} placeholder="Search..." />
+        <input type="text" className="quick-search" onChange={(event) => onChange(event.target.value)} placeholder="Search..." />
     );
 };
 
