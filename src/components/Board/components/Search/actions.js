@@ -1,6 +1,6 @@
 /**
  * Update single object item in array
- * @param {Object} properties
+ * @param {String} query
  */
 export const setSearchQuery = (query) => {
     return {

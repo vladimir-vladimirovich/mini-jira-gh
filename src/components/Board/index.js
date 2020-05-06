@@ -1,11 +1,11 @@
 import React from 'react';
 import Board from './Board';
 import PropTypes from 'prop-types';
-import { fakeServerUtil } from '../../utils/fakeServer.util';
 import * as actions from './actions';
+import * as selectors from './selectors';
+import { fakeServerUtil } from '../../utils/fakeServer.util';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import * as selectors from './selectors';
 
 class BoardContainer extends React.Component {
     componentDidMount() {

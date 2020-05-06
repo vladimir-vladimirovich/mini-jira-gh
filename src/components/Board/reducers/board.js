@@ -4,7 +4,21 @@ const defaultState = {
     taskbar: [],
     tasks: [],
     filters: [],
-    searchQuery: ''
+    searchQuery: '',
+    sidebar: {
+        visible: false,
+        taskId: '',
+        loading: true,
+        taskData: {
+            id: '',
+            summary: '',
+            assignee: '',
+            status: '',
+            project: '',
+            img: '',
+            desciption: ''
+        }
+    }
 };
 
 const boardReducer = (state = defaultState, action) => produce(state, (draftState) => {
@@ -52,6 +66,26 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
         }
         case 'SEARCH:SET_QUERY': {
             draftState.searchQuery = action.payload;
+
+            break;
+        }
+        case 'SIDEBAR:SET_VISIBILITY': {
+            draftState.sidebar.visible = action.payload;
+
+            break;
+        }
+        case 'SIDEBAR:SET_TASKID': {
+            draftState.sidebar.taskId = action.payload;
+
+            break;
+        }
+        case 'SIDEBAR:SET_LOADING': {
+            draftState.sidebar.loading = action.payload;
+
+            break;
+        }
+        case 'SIDEBAR:SET_TASK_DATA': {
+            draftState.sidebar.taskData = action.payload;
 
             break;
         }

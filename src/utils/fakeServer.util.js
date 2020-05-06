@@ -18,6 +18,16 @@ class FakeServerUtil {
         });
     }
 
+    getTaskData(taskId) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                taskId
+                    ? resolve(this.tasksData.find((task) => task.id === taskId))
+                    : reject(null);
+            }, 4000);
+        });
+    }
+
     getTaskbarConfig() {
         return new Promise((resolve) => {
             setTimeout(() => {

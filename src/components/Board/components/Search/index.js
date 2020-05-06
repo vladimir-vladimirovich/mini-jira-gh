@@ -1,10 +1,10 @@
 import React from 'react';
 import Search from './Search';
+import PropTypes from 'prop-types';
+import _ from 'underscore';
 import * as actions from './actions';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import '../../css/Filters.css';
-import _ from 'underscore';
 
 class SearchContainer extends React.Component {
     onChange = (value) => {

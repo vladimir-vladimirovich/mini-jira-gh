@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import '../../css/Task.css';
 
 const Task = (props) => {
-    const { id, summary, assignee, project, img, onDragStart } = props;
+    const { id, summary, assignee, project, img, onDragStart, onClick } = props;
 
     return (
         <div
             className="task"
             draggable="true"
             onDragStart={onDragStart}
+            onClick={onClick}
+            id={id}
         >
             <ul className="list">
                 <li>{id}</li>
@@ -38,7 +40,8 @@ Task.propTypes = {
     assignee: PropTypes.string.isRequired,
     project: PropTypes.string.isRequired,
     img: PropTypes.string,
-    onDragStart: PropTypes.func.isRequired
+    onDragStart: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired
 };
 
 export default Task;
