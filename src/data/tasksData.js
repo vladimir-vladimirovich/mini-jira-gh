@@ -6,7 +6,7 @@ export const tasksData = [
         status: 'To Do',
         project: 'Education',
         priority: 'High',
-        img: 'https://image.flaticon.com/icons/svg/2731/2731461.svg',
+        img: 'https://image.flaticon.com/icons/svg/1810/1810742.svg',
         description: `1. Open JIRA MJ-1\n`
             + `2. Enter "Education"\n`
             + `3. Check if only education tasks are displayed\n`

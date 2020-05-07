@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     large: {
         width: theme.spacing(7),
         height: theme.spacing(7)
+    },
+    textStyles: {
+        fontWeight: 'bold'
     }
 }));
 
@@ -71,7 +74,10 @@ const Sidebar = (props) => {
                                     startAdornment: (<InputAdornment position="start">
                                         {'Assignee:'}
                                         <Avatar alt="Remy Sharp" src={task.img} className={classes.small} />
-                                    </InputAdornment>)
+                                    </InputAdornment>),
+                                    classes: {
+                                        input: classes.textStyles
+                                    }
                                 }}
                             />
                         </Grid>
@@ -99,7 +105,6 @@ const Sidebar = (props) => {
                                 label="Description"
                                 multiline
                                 fullWidth
-                                // rows={4}
                                 defaultValue={task.description}
                                 variant="outlined"
                             />
