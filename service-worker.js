@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mini-jira-gh/precache-manifest.44b9d5db21af4c31866c010a5bea01ed.js"
+  "/mini-jira-gh/precache-manifest.b9c6d4e3f0f20e1bfcce32cfc95e336a.js"
 );
 
 self.addEventListener('message', (event) => {
