@@ -14,15 +14,15 @@ class SidebarContainer extends React.Component {
     }
 
     render() {
-        const { isLoading, isOpened, taskData } = this.props;
+        const { isLoading, isVisible, task } = this.props;
 
         return (
             <div>
                 <Sidebar
                     closeSidebar={this.closeSidebar}
-                    isOpened={isOpened}
+                    isVisible={isVisible}
                     isLoading={isLoading}
-                    taskData={taskData}
+                    task={task}
                 />
             </div>
         );
@@ -31,15 +31,15 @@ class SidebarContainer extends React.Component {
 
 SidebarContainer.propTypes = {
     dispatch: PropTypes.func.isRequired,
-    isOpened: PropTypes.bool.isRequired,
-    taskData: PropTypes.object,
-    isLoading: PropTypes.bool.isRequired
+    isVisible: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    task: PropTypes.object.isRequired
 };
 
 const enhance = connect((state) => ({
-    isOpened: selectors.getSidebarStatus(state),
-    taskData: selectors.getSidebarTaskData(state),
-    isLoading: selectors.getSidebarLoading(state)
+    isVisible: selectors.getVisibilityStatus(state),
+    isLoading: selectors.getSidebarLoading(state),
+    task: selectors.getSidebarTask(state)
 }));
 
 export default enhance(SidebarContainer);

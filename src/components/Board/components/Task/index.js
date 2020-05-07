@@ -4,7 +4,6 @@ import Task from './Task';
 import * as commonActions from '../../commonActions';
 import * as actions from './actions';
 import { connect } from 'react-redux';
-import { fakeServerUtil } from '../../../../utils/fakeServer.util';
 
 class TaskContainer extends React.Component {
     onDragStart = (event) => {
@@ -15,14 +14,7 @@ class TaskContainer extends React.Component {
         const { dispatch } = this.props;
 
         dispatch(commonActions.setSidebarVisibility(true));
-        dispatch(actions.setSidebarTask(event.currentTarget.id));
-
-        dispatch(actions.setLoading(true));
-        fakeServerUtil.getTaskData(event.currentTarget.id)
-            .then(taskData => {
-                dispatch(actions.setTaskData(taskData));
-                dispatch(actions.setLoading(false));
-            });
+        dispatch(actions.setSidebarTaskId(event.currentTarget.id));
     }
 
     render() {

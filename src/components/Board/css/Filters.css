@@ -1,8 +1,5 @@
 .filtersPanel {
     display: flex;
-    /* flex-flow: row nowrap;
-    padding: 10px;
-    align-items: center; */
 }
 
 .quick-filters-container {

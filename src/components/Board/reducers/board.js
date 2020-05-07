@@ -9,7 +9,7 @@ const defaultState = {
         visible: false,
         taskId: '',
         loading: true,
-        taskData: {
+        defaultTaskData: {
             id: '',
             summary: '',
             assignee: '',
@@ -76,16 +76,6 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
         }
         case 'SIDEBAR:SET_TASKID': {
             draftState.sidebar.taskId = action.payload;
-
-            break;
-        }
-        case 'SIDEBAR:SET_LOADING': {
-            draftState.sidebar.loading = action.payload;
-
-            break;
-        }
-        case 'SIDEBAR:SET_TASK_DATA': {
-            draftState.sidebar.taskData = action.payload;
 
             break;
         }
