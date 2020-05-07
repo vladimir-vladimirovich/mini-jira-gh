@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7e0c788f8f9f26e74550c673c34d1cc7",
+    "revision": "0fd4f43cf7ed184fe0ed0447fb5188a3",
     "url": "/mini-jira-gh/index.html"
   },
   {
-    "revision": "a398f88eeed54218ce67",
+    "revision": "faa1439086e3e5ce1e1b",
     "url": "/mini-jira-gh/static/css/main.2af0f225.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mini-jira-gh/static/js/2.66f8a074.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a398f88eeed54218ce67",
-    "url": "/mini-jira-gh/static/js/main.003187e2.chunk.js"
+    "revision": "faa1439086e3e5ce1e1b",
+    "url": "/mini-jira-gh/static/js/main.2ce4f37b.chunk.js"
   },
   {
     "revision": "6a48aa4d110d44181c52",
