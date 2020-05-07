@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 
@@ -15,7 +14,15 @@ import '../../css/Sidebar.css';
 const useStyles = makeStyles((theme) => ({
     small: {
         width: theme.spacing(3),
-        height: theme.spacing(3),
+        height: theme.spacing(3)
+    },
+    medium: {
+        width: theme.spacing(4),
+        height: theme.spacing(4)
+    },
+    large: {
+        width: theme.spacing(7),
+        height: theme.spacing(7)
     }
 }));
 
@@ -37,7 +44,11 @@ const Sidebar = (props) => {
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            <AccountCircle />
+                                            <Avatar
+                                                alt="Remy Sharp"
+                                                src="https://image.flaticon.com/icons/png/512/2628/2628496.png"
+                                                className={classes.medium}
+                                            />
                                         </InputAdornment>
                                     )
                                 }}
@@ -64,7 +75,15 @@ const Sidebar = (props) => {
                                 }}
                             />
                         </Grid>
-
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                disabled
+                                defaultValue={task.priority}
+                                InputProps={{
+                                    startAdornment: <InputAdornment position="start">{'Priority:'}</InputAdornment>
+                                }}
+                            />
+                        </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 disabled
@@ -74,7 +93,17 @@ const Sidebar = (props) => {
                                 }}
                             />
                         </Grid>
-
+                        <Grid item xs={12}>
+                            <TextField
+                                id="outlined-multiline-static"
+                                label="Description"
+                                multiline
+                                fullWidth
+                                // rows={4}
+                                defaultValue={task.description}
+                                variant="outlined"
+                            />
+                        </Grid>
                     </Grid>
                 </div>
             </Drawer>
