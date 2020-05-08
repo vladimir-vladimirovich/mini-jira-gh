@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0fd4f43cf7ed184fe0ed0447fb5188a3",
+    "revision": "240fad6fbcb9ae663d2c4c393a91e4b6",
     "url": "/mini-jira-gh/index.html"
   },
   {
-    "revision": "faa1439086e3e5ce1e1b",
+    "revision": "305c65c6ef39e0a30291",
     "url": "/mini-jira-gh/static/css/main.2af0f225.chunk.css"
   },
   {
-    "revision": "426a9db641c7e150f7ec",
-    "url": "/mini-jira-gh/static/js/2.66f8a074.chunk.js"
+    "revision": "ec82a6aa4e5307b865a0",
+    "url": "/mini-jira-gh/static/js/2.372ed9ea.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/mini-jira-gh/static/js/2.66f8a074.chunk.js.LICENSE.txt"
+    "url": "/mini-jira-gh/static/js/2.372ed9ea.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "faa1439086e3e5ce1e1b",
-    "url": "/mini-jira-gh/static/js/main.2ce4f37b.chunk.js"
+    "revision": "305c65c6ef39e0a30291",
+    "url": "/mini-jira-gh/static/js/main.b564e3bb.chunk.js"
   },
   {
     "revision": "6a48aa4d110d44181c52",
