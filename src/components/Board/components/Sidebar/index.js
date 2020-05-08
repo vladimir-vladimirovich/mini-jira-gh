@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sidebar from './Sidebar';
+import _ from 'underscore';
 import { connect } from 'react-redux';
 import * as commonActions from '../../commonActions';
 import * as selectors from './selectors';
@@ -31,6 +32,33 @@ class SidebarContainer extends React.Component {
         dispatch(commonActions.updateTask({ id: taskId, project: event.target.value }));
     }
 
+    handleAssigneeChange = (event, taskId) => {
+        const { dispatch, employees } = this.props;
+        const assignee = employees.find((employee) => employee.name === event.target.value);
+
+        dispatch(commonActions.updateTask({
+            id: taskId,
+            assignee: event.target.value,
+            img: assignee.avatar
+        }));
+    }
+
+    _handleSummaryChange = (value, taskId) => {
+        const { dispatch } = this.props;
+
+        dispatch(commonActions.updateTask({ id: taskId, summary: value }));
+    }
+
+    _handleDescriptionChange = (value, taskId) => {
+        const { dispatch } = this.props;
+
+        dispatch(commonActions.updateTask({ id: taskId, description: value }));
+    };
+
+    handleSummaryChange = _.debounce(this._handleSummaryChange, 200);
+
+    handleDescriptionChange = _.debounce(this._handleDescriptionChange, 200);
+
     render() {
         const {
             isVisible,
@@ -54,6 +82,9 @@ class SidebarContainer extends React.Component {
                     handleStatusChange={this.handleStatusChange}
                     handlePriorityChange={this.handlePriorityChange}
                     handleProjectChange={this.handleProjectChange}
+                    handleAssigneeChange={this.handleAssigneeChange}
+                    handleSummaryChange={this.handleSummaryChange}
+                    handleDescriptionChange={this.handleDescriptionChange}
                 />
             </div>
         );

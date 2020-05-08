@@ -41,7 +41,10 @@ const Sidebar = (props) => {
         employees,
         handleStatusChange,
         handlePriorityChange,
-        handleProjectChange
+        handleProjectChange,
+        handleAssigneeChange,
+        handleSummaryChange,
+        handleDescriptionChange
     } = props;
     const classes = useStyles();
 
@@ -55,6 +58,7 @@ const Sidebar = (props) => {
                                 id="standard-basic"
                                 defaultValue={task.summary}
                                 label={task.id}
+                                onChange={(event) => handleSummaryChange(event.target.value, task.id)}
                                 fullWidth
                                 InputProps={{
                                     startAdornment: (
@@ -89,6 +93,7 @@ const Sidebar = (props) => {
                             <TextField
                                 select
                                 value={task.assignee}
+                                onChange={(event) => handleAssigneeChange(event, task.id)}
                                 InputProps={{
                                     startAdornment: (<InputAdornment position="start">
                                         {'Assignee:'}
@@ -97,8 +102,8 @@ const Sidebar = (props) => {
                                 }}
                             >
                                 {employees.map((employee) => (
-                                    <MenuItem key={employee} value={employee}>
-                                        {employee}
+                                    <MenuItem key={employee.name} value={employee.name}>
+                                        {employee.name}
                                     </MenuItem>
                                 ))}
                             </TextField>
@@ -140,6 +145,7 @@ const Sidebar = (props) => {
                             <TextField
                                 id="outlined-multiline-static"
                                 label="Description"
+                                onChange={(event) => handleDescriptionChange(event.target.value, task.id)}
                                 multiline
                                 fullWidth
                                 defaultValue={task.description}
@@ -163,7 +169,10 @@ Sidebar.propTypes = {
     employees: PropTypes.array.isRequired,
     handleStatusChange: PropTypes.func.isRequired,
     handlePriorityChange: PropTypes.func.isRequired,
-    handleProjectChange: PropTypes.func.isRequired
+    handleProjectChange: PropTypes.func.isRequired,
+    handleAssigneeChange: PropTypes.func.isRequired,
+    handleSummaryChange: PropTypes.func.isRequired,
+    handleDescriptionChange: PropTypes.func.isRequired
 };
 
 export default Sidebar;
