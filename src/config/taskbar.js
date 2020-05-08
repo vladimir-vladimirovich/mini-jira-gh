@@ -6,7 +6,7 @@ export const taskbarConfig = [
         columnName: 'In Progress'
     },
     {
-        columnName: 'Ready for testing'
+        columnName: 'Ready For Testing'
     },
     {
         columnName: 'Completed'

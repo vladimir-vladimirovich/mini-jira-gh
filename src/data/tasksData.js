@@ -2,11 +2,11 @@ export const tasksData = [
     {
         id: 'MJ-1',
         summary: 'Learn React',
-        assignee: 'None',
+        assignee: 'Anya',
         status: 'To Do',
         project: 'Education',
         priority: 'High',
-        img: 'https://image.flaticon.com/icons/svg/1810/1810742.svg',
+        img: 'https://image.flaticon.com/icons/png/512/417/417776.png',
         description: `1. Open JIRA MJ-1\n`
             + `2. Enter "Education"\n`
             + `3. Check if only education tasks are displayed\n`
@@ -40,7 +40,7 @@ export const tasksData = [
     {
         id: 'MJ-3',
         summary: 'Log time',
-        assignee: 'Diana',
+        assignee: 'Lena',
         status: 'To Do',
         project: 'Routine',
         priority: 'Medium',
@@ -59,10 +59,10 @@ export const tasksData = [
     {
         id: 'MJ-4',
         summary: 'Create mini-jira',
-        assignee: 'Artem',
+        assignee: 'Max',
         status: 'To Do',
         project: 'Education',
-        priority: 'Urgent',
+        priority: 'Very High',
         img: 'https://image.flaticon.com/icons/svg/145/145843.svg',
         description: `1. Open JIRA MJ-1\n`
             + `2. Enter "Education"\n`
@@ -78,7 +78,7 @@ export const tasksData = [
     {
         id: 'MJ-5',
         summary: 'Feed the cat',
-        assignee: 'Julia',
+        assignee: 'Katya',
         status: 'To Do',
         project: 'Ungreatful tasks',
         priority: 'High',
@@ -116,7 +116,7 @@ export const tasksData = [
     {
         id: 'MJ-7',
         summary: 'Do sport',
-        assignee: 'Lera',
+        assignee: 'Another Anya',
         status: 'To Do',
         project: 'Health',
         priority: 'Medium',
@@ -135,7 +135,7 @@ export const tasksData = [
     {
         id: 'MJ-8',
         summary: 'Cook',
-        assignee: 'Yuri',
+        assignee: 'Dima',
         status: 'To Do',
         project: 'Routine',
         priority: 'Low',

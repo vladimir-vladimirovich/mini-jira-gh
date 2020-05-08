@@ -1,6 +1,8 @@
 import { tasksData } from '../data/tasksData';
+import { employees } from '../data/employees';
 import { taskbarConfig } from '../config/taskbar';
 import { filtersConfig } from '../config/filters';
+import { taskConfig } from '../config/task';
 
 // Class developed in order to emulate async server calls
 class FakeServerUtil {
@@ -8,6 +10,8 @@ class FakeServerUtil {
         this.tasksData = tasksData;
         this.taskbarConfig = taskbarConfig;
         this.filtersConfig = filtersConfig;
+        this.taskConfig = taskConfig;
+        this.employees = employees;
     }
 
     getTasksData() {
@@ -15,16 +19,6 @@ class FakeServerUtil {
             setTimeout(() => {
                 resolve(this.tasksData);
             }, 100);
-        });
-    }
-
-    getTaskData(taskId) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                taskId
-                    ? resolve(this.tasksData.find((task) => task.id === taskId))
-                    : reject(null);
-            }, 4000);
         });
     }
 
@@ -41,6 +35,22 @@ class FakeServerUtil {
             setTimeout(() => {
                 resolve(this.filtersConfig);
             }, 100);
+        });
+    }
+
+    getTasksConfig() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(this.taskConfig);
+            }, 2000);
+        });
+    }
+
+    getEmployees() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(this.employees);
+            }, 2000);
         });
     }
 }

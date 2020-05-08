@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -30,7 +31,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sidebar = (props) => {
-    const { closeSidebar, isVisible, task } = props;
+    const {
+        closeSidebar,
+        isVisible,
+        task,
+        statuses,
+        priorities,
+        projects,
+        employees,
+        handleStatusChange,
+        handlePriorityChange,
+        handleProjectChange
+    } = props;
     const classes = useStyles();
 
     return (
@@ -59,45 +71,70 @@ const Sidebar = (props) => {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                disabled
-                                defaultValue={task.status}
+                                select
+                                value={task.status}
+                                onChange={(event) => handleStatusChange(event, task.id)}
                                 InputProps={{
                                     startAdornment: <InputAdornment position="start">{'Status:'}</InputAdornment>
                                 }}
-                            />
+                            >
+                                {statuses.map((status) => (
+                                    <MenuItem key={status} value={status}>
+                                        {status}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                disabled
-                                defaultValue={task.assignee}
+                                select
+                                value={task.assignee}
                                 InputProps={{
                                     startAdornment: (<InputAdornment position="start">
                                         {'Assignee:'}
                                         <Avatar alt="Remy Sharp" src={task.img} className={classes.small} />
-                                    </InputAdornment>),
-                                    classes: {
-                                        input: classes.textStyles
-                                    }
+                                    </InputAdornment>)
                                 }}
-                            />
+                            >
+                                {employees.map((employee) => (
+                                    <MenuItem key={employee} value={employee}>
+                                        {employee}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                disabled
-                                defaultValue={task.priority}
+                                select
+                                value={task.priority}
+                                onChange={(event) => handlePriorityChange(event, task.id)}
                                 InputProps={{
                                     startAdornment: <InputAdornment position="start">{'Priority:'}</InputAdornment>
                                 }}
-                            />
+                            >
+                                {priorities.map((priority) => (
+                                    <MenuItem key={priority} value={priority}>
+                                        {priority}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                disabled
-                                defaultValue={task.project}
+                                select
+                                value={task.project}
+                                onChange={(event) => handleProjectChange(event, task.id)}
                                 InputProps={{
                                     startAdornment: <InputAdornment position="start">{'Project:'}</InputAdornment>
                                 }}
-                            />
+                            >
+                                {projects.map((project) => (
+                                    <MenuItem key={project} value={project}>
+                                        {project}
+                                    </MenuItem>
+                                ))}
+
+                            </TextField>
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
@@ -120,7 +157,13 @@ Sidebar.propTypes = {
     closeSidebar: PropTypes.func.isRequired,
     task: PropTypes.object.isRequired,
     isVisible: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired
+    statuses: PropTypes.array.isRequired,
+    priorities: PropTypes.array.isRequired,
+    projects: PropTypes.array.isRequired,
+    employees: PropTypes.array.isRequired,
+    handleStatusChange: PropTypes.func.isRequired,
+    handlePriorityChange: PropTypes.func.isRequired,
+    handleProjectChange: PropTypes.func.isRequired
 };
 
 export default Sidebar;

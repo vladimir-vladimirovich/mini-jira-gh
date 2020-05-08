@@ -21,6 +21,16 @@ export const updateTasksAll = (tasks) => {
 };
 
 /**
+ * @param {Object} tasksConfig
+ */
+export const updateTasksConfig = (tasksConfig) => {
+    return {
+        type: 'TASKS:CONFIG:UPDATE',
+        payload: tasksConfig
+    };
+};
+
+/**
  * Re-write related store
  * @param {Array.<Object>} filters
  */
@@ -28,5 +38,15 @@ export const updateFilters = (filters) => {
     return {
         type: 'FILTERS:SET',
         payload: filters
+    };
+};
+
+/**
+ * @param {Array} employees
+ */
+export const updateEmployees = (employees) => {
+    return {
+        type: 'GLOBAL:UPDATE_EMPLOYEES',
+        payload: employees
     };
 };

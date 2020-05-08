@@ -12,6 +12,8 @@ class BoardContainer extends React.Component {
         this.updateTaskbar();
         this.updateTasks();
         this.updateFilters();
+        this.updateTaskConfig();
+        this.updateEmployees();
     }
 
     async updateTaskbar() {
@@ -33,6 +35,20 @@ class BoardContainer extends React.Component {
         const filtersData = await fakeServerUtil.getFiltersConfig();
 
         dispatch(actions.updateFilters(filtersData));
+    }
+
+    async updateTaskConfig() {
+        const { dispatch } = this.props;
+        const tasksConfig = await fakeServerUtil.getTasksConfig();
+
+        dispatch(actions.updateTasksConfig(tasksConfig));
+    }
+
+    async updateEmployees() {
+        const { dispatch } = this.props;
+        const employees = await fakeServerUtil.getEmployees();
+
+        dispatch(actions.updateEmployees(employees));
     }
 
     render() {

@@ -5,10 +5,15 @@ const defaultState = {
     tasks: [],
     filters: [],
     searchQuery: '',
+    employees: [],
+    tasksConfig: {
+        statuses: [],
+        priorities: [],
+        projects: []
+    },
     sidebar: {
         visible: false,
         taskId: '',
-        loading: true,
         defaultTaskData: {
             id: '',
             summary: '',
@@ -44,6 +49,21 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
 
             break;
         }
+        case 'TASKS:UPDATE_ITEM_STATUS': {
+            const updateItem = draftState.tasks.find((task) => task.id === action.payload.id);
+
+            Object.assign(updateItem, {
+                ...updateItem,
+                status: action.payload.status
+            });
+
+            break;
+        }
+        case 'TASKS:CONFIG:UPDATE': {
+            draftState.tasksConfig = action.payload;
+
+            break;
+        }
         case 'FILTERS:SET': {
             action.payload.forEach((filter) => {
                 filter.active = false;
@@ -76,6 +96,11 @@ const boardReducer = (state = defaultState, action) => produce(state, (draftStat
         }
         case 'SIDEBAR:SET_TASKID': {
             draftState.sidebar.taskId = action.payload;
+
+            break;
+        }
+        case 'GLOBAL:UPDATE_EMPLOYEES': {
+            draftState.employees = action.payload;
 
             break;
         }
