@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TaskbarContainer from './components/Taskbar/index';
-import './css/Board.css';
 import FiltersContainer from './components/Filters/index';
 import SidebarContainer from './components/Sidebar/index';
+import './css/Board.css';
 
 const Board = (props) => {
     const { columnNames } = props;

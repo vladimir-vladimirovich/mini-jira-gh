@@ -9,46 +9,35 @@ import { compose } from 'redux';
 
 class BoardContainer extends React.Component {
     componentDidMount() {
-        this.updateTaskbar();
-        this.updateTasks();
-        this.updateFilters();
-        this.updateTaskConfig();
-        this.updateEmployees();
+        this.init();
     }
 
-    async updateTaskbar() {
+    async init() {
         const { dispatch } = this.props;
-        const taskbarData = await fakeServerUtil.getTaskbarConfig();
 
-        dispatch(actions.updateTaskbar(taskbarData));
-    }
+        try {
+            const [
+                taskbarData,
+                tasksData,
+                filtersData,
+                tasksConfig,
+                employees
+            ] = await Promise.all([
+                fakeServerUtil.getTaskbarConfig(),
+                fakeServerUtil.getTasksData(),
+                fakeServerUtil.getFiltersConfig(),
+                fakeServerUtil.getTasksConfig(),
+                fakeServerUtil.getEmployees()
+            ]);
 
-    async updateTasks() {
-        const { dispatch } = this.props;
-        const tasksData = await fakeServerUtil.getTasksData();
-
-        dispatch(actions.updateTasksAll(tasksData));
-    }
-
-    async updateFilters() {
-        const { dispatch } = this.props;
-        const filtersData = await fakeServerUtil.getFiltersConfig();
-
-        dispatch(actions.updateFilters(filtersData));
-    }
-
-    async updateTaskConfig() {
-        const { dispatch } = this.props;
-        const tasksConfig = await fakeServerUtil.getTasksConfig();
-
-        dispatch(actions.updateTasksConfig(tasksConfig));
-    }
-
-    async updateEmployees() {
-        const { dispatch } = this.props;
-        const employees = await fakeServerUtil.getEmployees();
-
-        dispatch(actions.updateEmployees(employees));
+            dispatch(actions.updateTaskbar(taskbarData));
+            dispatch(actions.updateTasksAll(tasksData));
+            dispatch(actions.updateFilters(filtersData));
+            dispatch(actions.updateTasksConfig(tasksConfig));
+            dispatch(actions.updateEmployees(employees));
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     render() {

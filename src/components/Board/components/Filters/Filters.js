@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../css/Filters.css';
 import SearchContainer from '../Search/index';
+import '../../css/Filters.css';
 
 const FiltersPanel = (props) => {
     const { filters, applyFilter } = props;
