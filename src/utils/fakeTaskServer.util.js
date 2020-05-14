@@ -1,11 +1,11 @@
-import { tasksData } from '../data/tasksData';
-import { employees } from '../data/employees';
-import { taskbarConfig } from '../config/taskbar';
-import { filtersConfig } from '../config/filters';
-import { taskConfig } from '../config/task';
+import { tasksData } from '../dataFromServer/tasksData';
+import { employees } from '../dataFromServer/employees';
+import { taskbarConfig } from '../configFromServer/taskbar';
+import { filtersConfig } from '../configFromServer/filters';
+import { taskConfig } from '../configFromServer/task';
 
 // Class developed in order to emulate async server calls
-class FakeServerUtil {
+class FakeTaskServerUtil {
     constructor() {
         this.tasksData = tasksData;
         this.taskbarConfig = taskbarConfig;
@@ -55,4 +55,4 @@ class FakeServerUtil {
     }
 }
 
-export const fakeServerUtil = new FakeServerUtil();
+export const fakeTaskServerUtil = new FakeTaskServerUtil();

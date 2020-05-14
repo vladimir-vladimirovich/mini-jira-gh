@@ -20,3 +20,13 @@ export const updateTask = (properties) => {
         }
     };
 };
+
+/**
+ * @param {Boolean} isLoggedIn
+ */
+export const toggleLoggedIn = (isLoggedIn) => {
+    return {
+        type: 'AUTH:TOGGLE_IS_LOGGED_IN',
+        payload: isLoggedIn
+    };
+};

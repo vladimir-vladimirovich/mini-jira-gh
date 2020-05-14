@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Taskbar from './Taskbar';
 import { connect } from 'react-redux';
-import * as commonActions from '../../commonActions';
+import * as commonActions from '../../../actions/common.actions';
 import * as selectors from './selectors';
 import '../../css/Taskbar.css';
 

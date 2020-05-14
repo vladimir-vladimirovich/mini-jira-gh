@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Task from './Task';
-import * as commonActions from '../../commonActions';
+import * as commonActions from '../../../actions/common.actions';
 import * as actions from './actions';
 import { connect } from 'react-redux';
 
