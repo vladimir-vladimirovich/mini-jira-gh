@@ -3,7 +3,7 @@ import Board from './Board';
 import PropTypes from 'prop-types';
 import * as actions from './actions';
 import * as selectors from './selectors';
-import { fakeServerUtil } from '../../utils/fakeServer.util';
+import { fakeTaskServerUtil } from '../../utils/fakeTaskServer.util';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
@@ -23,11 +23,11 @@ class BoardContainer extends React.Component {
                 tasksConfig,
                 employees
             ] = await Promise.all([
-                fakeServerUtil.getTaskbarConfig(),
-                fakeServerUtil.getTasksData(),
-                fakeServerUtil.getFiltersConfig(),
-                fakeServerUtil.getTasksConfig(),
-                fakeServerUtil.getEmployees()
+                fakeTaskServerUtil.getTaskbarConfig(),
+                fakeTaskServerUtil.getTasksData(),
+                fakeTaskServerUtil.getFiltersConfig(),
+                fakeTaskServerUtil.getTasksConfig(),
+                fakeTaskServerUtil.getEmployees()
             ]);
 
             dispatch(actions.updateTaskbar(taskbarData));

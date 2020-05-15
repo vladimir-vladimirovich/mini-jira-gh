@@ -1,6 +1,6 @@
 import * as reduxUtil from '../../utils/redux.util';
 
-const getColumnNamesMemo = (state) => state.taskbar;
+const getColumnNamesMemo = (state) => state.board.taskbar;
 
 export const getColumnNames = reduxUtil.createDeepEqualSelector(
     [getColumnNamesMemo],

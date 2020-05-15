@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Sidebar from './Sidebar';
 import _ from 'underscore';
 import { connect } from 'react-redux';
-import * as commonActions from '../../commonActions';
+import * as commonActions from '../../../actions/common.actions';
 import * as selectors from './selectors';
 import '../../css/Filters.css';
 

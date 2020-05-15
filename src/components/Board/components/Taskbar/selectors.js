@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-const getTasksMemo = (state, props) => state.tasks.filter((task) => task.status === props.status);
-const getActiveFilterMemo = (state) => state.filters.find((filter) => filter.active);
-const getSearchQueryMemo = (state) => state.searchQuery.toLowerCase();
+const getTasksMemo = (state, props) => state.board.tasks.filter((task) => task.status === props.status);
+const getActiveFilterMemo = (state) => state.board.filters.find((filter) => filter.active);
+const getSearchQueryMemo = (state) => state.board.searchQuery.toLowerCase();
 
 export const getTasks = createSelector(
     [
