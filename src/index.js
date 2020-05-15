@@ -17,9 +17,9 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
-                <Route path="/" exact component={LoginFormContainer} />
-                <Route path="/login" exact component={LoginFormContainer} />
-                <Route path="/board" exact component={BoardContainer} />
+                <Route path="/mini-jira-gh/" exact component={LoginFormContainer} />
+                <Route path="/mini-jira-gh/login" exact component={LoginFormContainer} />
+                <Route path="/mini-jira-gh/board" exact component={BoardContainer} />
             </Switch>
         </Router>
     </Provider>,
