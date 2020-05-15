@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mini-jira-gh/static/css/main.a05ee811.chunk.css",
-    "main.js": "/mini-jira-gh/static/js/main.e2225e18.chunk.js",
-    "main.js.map": "/mini-jira-gh/static/js/main.e2225e18.chunk.js.map",
+    "main.js": "/mini-jira-gh/static/js/main.cfb7f302.chunk.js",
+    "main.js.map": "/mini-jira-gh/static/js/main.cfb7f302.chunk.js.map",
     "runtime-main.js": "/mini-jira-gh/static/js/runtime-main.0c95ebe7.js",
     "runtime-main.js.map": "/mini-jira-gh/static/js/runtime-main.0c95ebe7.js.map",
     "static/js/2.a00db410.chunk.js": "/mini-jira-gh/static/js/2.a00db410.chunk.js",
     "static/js/2.a00db410.chunk.js.map": "/mini-jira-gh/static/js/2.a00db410.chunk.js.map",
     "index.html": "/mini-jira-gh/index.html",
-    "precache-manifest.b3a217bd71a53470a5b21837e3f0af87.js": "/mini-jira-gh/precache-manifest.b3a217bd71a53470a5b21837e3f0af87.js",
+    "precache-manifest.4e402865a37662aa3dee77e00ff2920c.js": "/mini-jira-gh/precache-manifest.4e402865a37662aa3dee77e00ff2920c.js",
     "service-worker.js": "/mini-jira-gh/service-worker.js",
     "static/css/main.a05ee811.chunk.css.map": "/mini-jira-gh/static/css/main.a05ee811.chunk.css.map",
     "static/js/2.a00db410.chunk.js.LICENSE.txt": "/mini-jira-gh/static/js/2.a00db410.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0c95ebe7.js",
     "static/js/2.a00db410.chunk.js",
     "static/css/main.a05ee811.chunk.css",
-    "static/js/main.e2225e18.chunk.js"
+    "static/js/main.cfb7f302.chunk.js"
   ]
 }
