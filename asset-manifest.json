@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mini-jira-gh/static/css/main.2af0f225.chunk.css",
-    "main.js": "/mini-jira-gh/static/js/main.1cfc04e3.chunk.js",
-    "main.js.map": "/mini-jira-gh/static/js/main.1cfc04e3.chunk.js.map",
+    "main.css": "/mini-jira-gh/static/css/main.a05ee811.chunk.css",
+    "main.js": "/mini-jira-gh/static/js/main.e2225e18.chunk.js",
+    "main.js.map": "/mini-jira-gh/static/js/main.e2225e18.chunk.js.map",
     "runtime-main.js": "/mini-jira-gh/static/js/runtime-main.0c95ebe7.js",
     "runtime-main.js.map": "/mini-jira-gh/static/js/runtime-main.0c95ebe7.js.map",
-    "static/js/2.c828c054.chunk.js": "/mini-jira-gh/static/js/2.c828c054.chunk.js",
-    "static/js/2.c828c054.chunk.js.map": "/mini-jira-gh/static/js/2.c828c054.chunk.js.map",
+    "static/js/2.a00db410.chunk.js": "/mini-jira-gh/static/js/2.a00db410.chunk.js",
+    "static/js/2.a00db410.chunk.js.map": "/mini-jira-gh/static/js/2.a00db410.chunk.js.map",
     "index.html": "/mini-jira-gh/index.html",
-    "precache-manifest.97be2a4fde89959622e51019bc26ea8b.js": "/mini-jira-gh/precache-manifest.97be2a4fde89959622e51019bc26ea8b.js",
+    "precache-manifest.b3a217bd71a53470a5b21837e3f0af87.js": "/mini-jira-gh/precache-manifest.b3a217bd71a53470a5b21837e3f0af87.js",
     "service-worker.js": "/mini-jira-gh/service-worker.js",
-    "static/css/main.2af0f225.chunk.css.map": "/mini-jira-gh/static/css/main.2af0f225.chunk.css.map",
-    "static/js/2.c828c054.chunk.js.LICENSE.txt": "/mini-jira-gh/static/js/2.c828c054.chunk.js.LICENSE.txt"
+    "static/css/main.a05ee811.chunk.css.map": "/mini-jira-gh/static/css/main.a05ee811.chunk.css.map",
+    "static/js/2.a00db410.chunk.js.LICENSE.txt": "/mini-jira-gh/static/js/2.a00db410.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0c95ebe7.js",
-    "static/js/2.c828c054.chunk.js",
-    "static/css/main.2af0f225.chunk.css",
-    "static/js/main.1cfc04e3.chunk.js"
+    "static/js/2.a00db410.chunk.js",
+    "static/css/main.a05ee811.chunk.css",
+    "static/js/main.e2225e18.chunk.js"
   ]
 }
