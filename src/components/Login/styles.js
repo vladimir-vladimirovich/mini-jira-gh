@@ -1,14 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-        marginBottom: theme.spacing(30)
-    },
     paper: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignContent: 'center',
-        justify: 'center'
+        marginBottom: '100px',
+        width: '400px',
+        height: '400px'
     },
     form: {
         marginTop: theme.spacing(2)
@@ -16,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     circularProgress: {
         marginLeft: 0,
         marginRight: theme.spacing(0.5)
+    },
+    alert: {
+        marginBottom: theme.spacing(1)
     }
 }));
 

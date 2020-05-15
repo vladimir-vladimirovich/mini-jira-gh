@@ -13,9 +13,11 @@ class LoginFormContainer extends React.Component {
     password = '';
 
     state = {
-        isFormDisabled: false,
         redirect: null,
-        loginError: null
+        loginError: null,
+        isShowPassword: false,
+        isFormDisabled: false,
+        alertVariant: 'filled'
     };
 
     handleFieldChange = (value, field) => {
@@ -26,6 +28,7 @@ class LoginFormContainer extends React.Component {
         const { dispatch } = this.props;
 
         this.toggleFormDisable(true);
+        this.setState({ loginError: '' });
         fakeAuthServer.login(this.username, this.password)
             .then(() => {
                 dispatch(commonActions.toggleLoggedIn(true));
@@ -40,12 +43,22 @@ class LoginFormContainer extends React.Component {
 
     handleLoginClickDebounced = _.debounce(this.handleLoginClick, 100);
 
+    handleVisibilityClick = () => {
+        const isShowPassword = this.state.isShowPassword;
+        this.setState({ isShowPassword: !isShowPassword });
+    }
+
     toggleFormDisable = (isFormDisabled) => {
         this.setState({ isFormDisabled });
     }
 
     render() {
-        const { redirect, isFormDisabled, loginError } = this.state;
+        const {
+            redirect,
+            isFormDisabled,
+            loginError,
+            isShowPassword
+        } = this.state;
 
         if (redirect) {
             return <Redirect to={this.state.redirect} />;
@@ -53,10 +66,12 @@ class LoginFormContainer extends React.Component {
 
         return (
             <LoginForm
+                loginError={loginError}
+                isShowPassword={isShowPassword}
+                isFormDisabled={isFormDisabled}
                 handleFieldChange={this.handleFieldChange}
                 handleLoginClick={this.handleLoginClickDebounced}
-                isFormDisabled={isFormDisabled}
-                loginError={loginError}
+                handleVisibilityClick={this.handleVisibilityClick}
             />
         );
     }
