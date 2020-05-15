@@ -30,7 +30,7 @@ class LoginFormContainer extends React.Component {
             .then(() => {
                 dispatch(commonActions.toggleLoggedIn(true));
                 this.toggleFormDisable(false);
-                this.setState({ redirect: '/board' });
+                this.setState({ redirect: '/mini-jira-gh/board' });
             })
             .catch((error) => {
                 this.toggleFormDisable(false);
